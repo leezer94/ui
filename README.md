@@ -1,2 +1,2 @@
 # ui
-Simple ui component library built on top of Radix ui
+Simple ui component library built with Radix ui and TailwindCSS
