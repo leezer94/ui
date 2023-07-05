@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import { NpmCommands } from 'types/unist';
 
 import { cn } from '@/lib/utils';
 import {
@@ -11,6 +12,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { CodeBlockWrapper } from '@/components/code-block-wrapper';
+import { ComponentExample } from '@/components/component-example';
+import { ComponentSource } from '@/components/component-source';
+import { examples } from '@/components/examples';
 
 const components = {
   Accordion,
@@ -141,6 +146,9 @@ const components = {
   pre: ({
     className,
     __rawString__,
+    __npmCommand__,
+    __pnpmCommand__,
+    __yarnCommand__,
     __withMeta__,
     __src__,
     ...props
@@ -148,7 +156,7 @@ const components = {
     __rawString__?: string;
     __withMeta__?: boolean;
     __src__?: string;
-  }) => {
+  } & NpmCommands) => {
     return (
       <>
         <pre
@@ -158,6 +166,23 @@ const components = {
           )}
           {...props}
         />
+        {/* {__rawString__ && !__npmCommand__ && (
+          <CopyButton
+            value={__rawString__}
+            src={__src__}
+            className={cn('absolute right-4 top-4', __withMeta__ && 'top-16')}
+          />
+        )}
+        {__npmCommand__ && __yarnCommand__ && __pnpmCommand__ && (
+          <CopyNpmCommandButton
+            commands={{
+              __npmCommand__,
+              __pnpmCommand__,
+              __yarnCommand__,
+            }}
+            className={cn('absolute right-4 top-4', __withMeta__ && 'top-16')}
+          />
+        )} */}
       </>
     );
   },
@@ -171,12 +196,18 @@ const components = {
     />
   ),
   Image,
+  ComponentExample,
+  ComponentSource,
+  CodeBlockWrapper: ({ ...props }) => (
+    <CodeBlockWrapper className='rounded-md border' {...props} />
+  ),
   Steps: ({ ...props }) => (
     <div
       className='[&>h3]:step mb-12 ml-4 border-l pl-8 [counter-reset:step]'
       {...props}
     />
   ),
+  ...examples,
 };
 
 interface MdxProps {
