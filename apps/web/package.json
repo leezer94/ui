@@ -4,16 +4,30 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.2",
+    "clsx": "^1.2.1",
+    "contentlayer": "^0.3.4",
+    "framer-motion": "^10.12.17",
     "leezer-ui": "workspace:^",
+    "lucide-react": "^0.257.0",
     "next": "^13.4.1",
+    "next-contentlayer": "^0.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "workspace:*"
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-pretty-code": "^0.10.0",
+    "rehype-slug": "^5.1.0",
+    "remark-code-import": "^1.2.0",
+    "remark-gfm": "^3.0.1",
+    "shiki": "^0.14.3",
+    "tailwind-merge": "^1.13.2",
+    "ui": "workspace:*",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
