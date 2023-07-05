@@ -4,8 +4,7 @@ import { notFound } from 'next/navigation';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Mdx } from '@/components/mdx-components';
-import { cn } from '@/lib/utils';
-import { absoluteUrl } from '../../../lib/utils/utils';
+import { cn, absoluteUrl } from '@/lib/utils';
 
 interface DocPageProps {
   params: {

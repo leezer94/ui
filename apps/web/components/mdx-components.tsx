@@ -16,6 +16,7 @@ import { CodeBlockWrapper } from '@/components/code-block-wrapper';
 import { ComponentExample } from '@/components/component-example';
 import { ComponentSource } from '@/components/component-source';
 import { examples } from '@/components/examples';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const components = {
   Accordion,
@@ -198,6 +199,7 @@ const components = {
   Image,
   ComponentExample,
   ComponentSource,
+  AspectRatio,
   CodeBlockWrapper: ({ ...props }) => (
     <CodeBlockWrapper className='rounded-md border' {...props} />
   ),
