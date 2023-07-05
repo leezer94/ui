@@ -5,6 +5,7 @@ import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Mdx } from '@/components/mdx-components';
 import { cn } from '@/lib/utils';
+import { absoluteUrl } from '../../../lib/utils/utils';
 
 interface DocPageProps {
   params: {
@@ -39,15 +40,15 @@ export async function generateMetadata({
       title: doc.title,
       description: doc.description,
       type: 'article',
-      // url: absoluteUrl(doc.slug),
-      // images: [
-      //   {
-      //     url: siteConfig.ogImage,
-      //     width: 1200,
-      //     height: 630,
-      //     alt: siteConfig.name,
-      //   },
-      // ],
+      url: absoluteUrl(doc.slug),
+      images: [
+        {
+          url: '',
+          width: 1200,
+          height: 630,
+          alt: '',
+        },
+      ],
     },
   };
 }
@@ -57,7 +58,6 @@ export default async function Page({ params }: DocPageProps) {
 
   if (!doc) notFound();
 
-  const slug = params.slug;
   return (
     <main className='relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]'>
       <div className='mx-auto w-full min-w-0'>
