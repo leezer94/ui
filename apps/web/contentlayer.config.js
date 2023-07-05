@@ -50,20 +50,20 @@ export const Doc = defineDocumentType(() => ({
       type: 'boolean',
       default: true,
     },
-    // radix: {
-    //   type: 'nested',
-    //   of: RadixProperties,
-    // },
-    // featured: {
-    //   type: 'boolean',
-    //   default: false,
-    //   required: false,
-    // },
-    // component: {
-    //   type: 'boolean',
-    //   default: false,
-    //   required: false,
-    // },
+    radix: {
+      type: 'nested',
+      of: RadixProperties,
+    },
+    featured: {
+      type: 'boolean',
+      default: false,
+      required: false,
+    },
+    component: {
+      type: 'boolean',
+      default: false,
+      required: false,
+    },
   },
   computedFields,
 }));
