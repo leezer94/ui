@@ -5,21 +5,15 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../../ui/accordion';
+} from '@/components/ui/accordion';
 
 export default function AccordionDemo() {
   return (
-    <Accordion
-      type='single'
-      collapsible
-      // defaultValue='item-3'
-      // collapsible
-      className='w-full'
-    >
+    <Accordion type='single' collapsible className='w-full'>
       <AccordionItem value='item-1'>
         <AccordionTrigger>접근 가능성은 어떤가요 ?</AccordionTrigger>
         <AccordionContent>
-          WAI-ARIA 의 디자인 패턴을 차용 했습니다. Item 1
+          WAI-ARIA 의 디자인 패턴을 차용 했습니다.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value='item-2'>

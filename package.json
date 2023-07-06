@@ -7,7 +7,9 @@
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "web:dev": "pnpm --filter web run dev",
+    "web:build": "pnpm --filter web run build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
