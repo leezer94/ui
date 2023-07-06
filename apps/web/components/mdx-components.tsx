@@ -5,24 +5,30 @@ import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { NpmCommands } from 'types/unist';
 
-import { cn } from '@/lib/utils';
+import { Event, cn } from '@/lib';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Callout } from '@/components/callout';
 import { CodeBlockWrapper } from '@/components/code-block-wrapper';
 import { ComponentExample } from '@/components/component-example';
 import { ComponentSource } from '@/components/component-source';
+import { CopyButton, CopyNpmCommandButton } from '@/components/copy-button';
 import { examples } from '@/components/examples';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const components = {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Alert,
+  AlertTitle,
+  AlertDescription,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
@@ -152,11 +158,13 @@ const components = {
     __yarnCommand__,
     __withMeta__,
     __src__,
+    __event__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
     __rawString__?: string;
     __withMeta__?: boolean;
     __src__?: string;
+    __event__?: Event['name'];
   } & NpmCommands) => {
     return (
       <>
@@ -167,10 +175,11 @@ const components = {
           )}
           {...props}
         />
-        {/* {__rawString__ && !__npmCommand__ && (
+        {__rawString__ && !__npmCommand__ && (
           <CopyButton
             value={__rawString__}
             src={__src__}
+            event={__event__}
             className={cn('absolute right-4 top-4', __withMeta__ && 'top-16')}
           />
         )}
@@ -183,7 +192,7 @@ const components = {
             }}
             className={cn('absolute right-4 top-4', __withMeta__ && 'top-16')}
           />
-        )} */}
+        )}
       </>
     );
   },
@@ -197,6 +206,7 @@ const components = {
     />
   ),
   Image,
+  Callout,
   ComponentExample,
   ComponentSource,
   AspectRatio,

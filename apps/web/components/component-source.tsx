@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 import { CodeBlockWrapper } from '@/components/code-block-wrapper';
 
 interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {

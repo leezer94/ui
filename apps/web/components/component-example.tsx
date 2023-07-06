@@ -2,9 +2,9 @@
 
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-// import { button, CopyWithClassNames } from '@/components/copy-button';
+import { CopyButton, CopyWithClassNames } from '@/components/copy-button';
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   extractClassname?: boolean;
@@ -59,14 +59,17 @@ export function ComponentExample({
             </TabsTrigger>
           </TabsList>
           {extractedClassNames ? (
-            <button
+            <CopyWithClassNames
               value={codeString}
-              // classNames={extractedClassNames}
+              classNames={extractedClassNames}
               className='absolute right-4 top-20'
             />
           ) : (
             codeString && (
-              <button value={codeString} className='absolute right-4 top-20' />
+              <CopyButton
+                value={codeString}
+                className='absolute right-4 top-20'
+              />
             )
           )}
         </div>
