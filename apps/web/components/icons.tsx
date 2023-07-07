@@ -32,15 +32,23 @@ export type Icon = LucideIcon;
 export const Icons = {
   logo: (props: LucideProps) => (
     <svg
-      viewBox='0 0 24 24'
-      fill='currentColor'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
+      width='24'
+      height='24'
+      viewBox='0 0 120 120'
+      xmlns='http://www.w3.org/2000/svg'
       {...props}
     >
-      <circle cx='12' cy='12' r='10'></circle>
+      <polygon points='60,30 90,90 30,90'>
+        <animateTransform
+          attributeName='transform'
+          attributeType='XML'
+          type='rotate'
+          from='0 60 70'
+          to='360 60 70'
+          dur='10s'
+          repeatCount='indefinite'
+        />
+      </polygon>
     </svg>
   ),
   close: X,
