@@ -1,4 +1,5 @@
 import '../styles/global.css';
+import SiteHeader from '@/components/site/navigation/site-header';
 
 export default function RootLayout({
   children,
@@ -7,7 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        <div className='flex-1'>{children}</div>
+      </body>
     </html>
   );
 }
