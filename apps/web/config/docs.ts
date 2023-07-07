@@ -1,7 +1,8 @@
-import { MainNavItem } from '@/types/navigation';
+import { MainNavItem, SideNavItem } from '@/types/navigation';
 
 type DocsConfig = {
   MAIN_NAV: MainNavItem[];
+  SIDE_NAV: SideNavItem[];
 };
 
 export const DOCS_CONFIG: DocsConfig = {
@@ -22,6 +23,23 @@ export const DOCS_CONFIG: DocsConfig = {
       title: 'Github',
       href: 'https://github.com/leezer94/ui',
       external: true,
+    },
+  ],
+  SIDE_NAV: [
+    {
+      title: '컴포넌트',
+      items: [
+        {
+          title: '아코디언',
+          href: '/docs/components/accordion',
+          items: [],
+        },
+        {
+          title: '템플릿',
+          href: '/docs/components/templates',
+          items: [],
+        },
+      ],
     },
   ],
 };

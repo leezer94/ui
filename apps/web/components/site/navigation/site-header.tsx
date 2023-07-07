@@ -39,13 +39,13 @@ export default function SiteHeader() {
               rel='noreferrer'
             >
               <div
-                className={
-                  (buttonVariants({
+                className={cn(
+                  buttonVariants({
                     size: 'sm',
                     variant: 'ghost',
                   }),
-                  'w-9 px-0')
-                }
+                  'w-9 px-0 '
+                )}
               >
                 <Icons.linkedIn className='h-5 w-5 fill-current' />
                 <span className='sr-only'>Twitter</span>
