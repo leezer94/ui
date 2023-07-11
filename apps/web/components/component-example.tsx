@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CopyButton, CopyWithClassNames } from '@/components/copy-button';
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
-  extractClassname?: boolean;
+  extractClassName?: boolean;
   extractedClassNames?: string;
   align?: 'center' | 'start' | 'end';
   src?: string;
@@ -16,7 +16,7 @@ interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
 export function ComponentExample({
   children,
   className,
-  extractClassname,
+  extractClassName,
   extractedClassNames,
   align = 'center',
   src: _,

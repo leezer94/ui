@@ -39,9 +39,7 @@ npm install @radix-ui/react-accordion
 This is the `<Accordion />` primitive. You can place it in a file at `components/ui/accordion.tsx`.
 
 </Callout>
-
     </AccordionContent>
-
   </AccordionItem>
 </Accordion>
 
@@ -87,7 +85,20 @@ import {
 ```tsx
 <Accordion type='single' collapsible>
   <AccordionItem value='item-1'>
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionTrigger>접근 가능성은 어떤가요 ?</AccordionTrigger>
+    <AccordionContent>
+      WAI-ARIA 의 디자인 패턴은 차용 했습니다.
+    </AccordionContent>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value='item-2'>
+    <AccordionTrigger>ㅇㅇㅇ</AccordionTrigger>
+    <AccordionContent>Yㅇㅇㅇ</AccordionContent>
+  </AccordionItem>
+  <AccordionItem value='item-3'>
+    <AccordionTrigger>Is it ㅇㅇㅇ?</AccordionTrigger>
     <AccordionContent>
       Yes. It adheres to the WAI-ARIA design pattern.
     </AccordionContent>

@@ -39,6 +39,12 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/templates',
           items: [],
         },
+
+        {
+          title: '버튼',
+          href: '/docs/components/button',
+          items: [],
+        },
       ],
     },
   ],
