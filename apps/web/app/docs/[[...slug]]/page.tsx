@@ -5,6 +5,7 @@ import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Mdx } from '@/components/mdx-components';
 import { cn, absoluteUrl } from '@/lib';
+import { Button } from '@/components/ui/button';
 
 interface DocPageProps {
   params: {
@@ -73,6 +74,7 @@ export default async function Page({ params }: DocPageProps) {
           </h1>
           {doc.description && (
             <p className='text-lg text-muted-foreground'>
+              Balancer component
               {/* <Balancer>{doc.description}</Balancer> */}
             </p>
           )}
@@ -103,6 +105,14 @@ export default async function Page({ params }: DocPageProps) {
           </div>
         ) : null}
         {/* <Separator className='my-4 md:my-6' /> */}
+        <div className='flex gap-5'>
+          <Button variant='default'>Default</Button>
+          <Button variant='destructive'>Destructive</Button>
+          <Button variant='secondary'>Secondary</Button>
+          <Button variant='outline'>Outline</Button>
+          <Button variant='link'>Link</Button>
+          <Button variant='disabled'>Disabled</Button>
+        </div>
         <Mdx code={doc.body.code} />
         {/* <Separator className='my-4 md:my-6' />
         <DocsPager doc={doc} /> */}
