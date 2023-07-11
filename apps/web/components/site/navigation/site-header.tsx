@@ -51,6 +51,24 @@ export default function SiteHeader() {
                 <span className='sr-only'>Twitter</span>
               </div>
             </Link>
+            <Link
+              href={siteConfig.links.medium}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <div
+                className={cn(
+                  buttonVariants({
+                    size: 'sm',
+                    variant: 'ghost',
+                  }),
+                  'w-9 px-0 '
+                )}
+              >
+                <Icons.medium className='h-5 w-5 fill-current' />
+                <span className='sr-only'>Medium</span>
+              </div>
+            </Link>
           </nav>
         </div>
       </div>

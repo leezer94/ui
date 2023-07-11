@@ -6,6 +6,7 @@ export const siteConfig = {
   links: {
     linkedin: 'https://www.linkedin.com/in/keonhee-lee-2964b421a/',
     github: 'https://github.com/leezer94/ui',
+    medium: 'https://medium.com/@2kunhee94',
   },
 };
 
