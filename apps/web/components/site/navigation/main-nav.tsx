@@ -39,7 +39,7 @@ export default function MainNav() {
           컴포넌트
         </Link>
         <Link
-          href='/examples'
+          href='/examples/feed'
           className={cn(
             'transition-colors hover:text-foreground/80',
             pathname?.startsWith('/examples')
