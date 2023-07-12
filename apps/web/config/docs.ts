@@ -47,5 +47,15 @@ export const DOCS_CONFIG: DocsConfig = {
         },
       ],
     },
+    {
+      title: '예시',
+      items: [
+        {
+          title: '피드',
+          href: 'examples/feed',
+          items: [],
+        },
+      ],
+    },
   ],
 };
