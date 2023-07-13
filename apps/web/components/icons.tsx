@@ -26,6 +26,7 @@ import {
   User,
   X,
   type Icon as LucideIcon,
+  Newspaper,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -77,6 +78,7 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  newspaper: Newspaper,
   medium: (props: LucideProps) => (
     <svg
       xmlns='http://www.w3.org/2000/svg'

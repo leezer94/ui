@@ -4,6 +4,12 @@ import { parseStringPromise } from 'xml2js';
 import { FEED_URL } from '@/config/rss-feed';
 import type { RssFeedType } from '@/types/rss-feed';
 import FeedCard from '@/app/examples/feed/components/feed-card';
+import { Metadata } from 'next/types';
+
+export const metadata: Metadata = {
+  title: 'Feed',
+  description: 'Example Feed app using the components.',
+};
 
 const parseRssFeedArticles = async (url: string): Promise<RssFeedType> => {
   const response: AxiosResponse<string> = await axios.get(url);
@@ -15,7 +21,11 @@ const parseRssFeedArticles = async (url: string): Promise<RssFeedType> => {
 
   const { title, description, item } = await result.rss.channel;
 
-  return { title, description, item };
+  return {
+    title,
+    description,
+    item,
+  };
 };
 
 export default async function FeedPage() {
