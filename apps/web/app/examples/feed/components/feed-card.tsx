@@ -13,18 +13,23 @@ import { Separator } from '@/components/ui/separator';
 import { TITLE_PREFIX } from '@/config/rss-feed';
 import { cn } from '@/lib';
 import { RssFeedType } from '@/types/rss-feed';
+import { ReactNode } from 'react';
 
 interface FeedCard {
   className?: string;
   articles: RssFeedType;
+  selection: ReactNode;
 }
 
-export default function FeedCard({ className, articles }: FeedCard) {
+export default function FeedCard({ className, articles, selection }: FeedCard) {
   return (
-    <Card className={cn('', className)}>
+    <Card className={cn('w-full', className)}>
       <CardHeader>
         <CardTitle>{articles.title}</CardTitle>
-        <CardDescription>{articles.description}</CardDescription>
+        <div className='flex items-baseline justify-between'>
+          <CardDescription>{articles.description}</CardDescription>
+          {selection}
+        </div>
       </CardHeader>
       <CardContent className='max-h-[500px] overflow-scroll'>
         {articles?.item.map((feed, idx) => (
@@ -48,12 +53,12 @@ export default function FeedCard({ className, articles }: FeedCard) {
           <p>
             Articles from{' '}
             <a
-              href='https://kofearticle.substack.com/'
+              href={articles.url}
               target='_blank'
               rel='noreferrer'
               className='font-medium underline underline-offset-4'
             >
-              Korean FE articles
+              {articles.title}
             </a>
           </p>
         </Button>

@@ -21,6 +21,7 @@ import {
   Settings,
   SunMedium,
   Trash,
+  Rss,
   Twitter,
   Linkedin,
   User,
@@ -78,6 +79,7 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  rss: Rss,
   newspaper: Newspaper,
   medium: (props: LucideProps) => (
     <svg
