@@ -5,9 +5,17 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
+type Language = 'KR' | 'EN';
 export default function MainNav() {
+  const [currentLanguage, setCurrentLanguage] = useState<Language>('KR');
   const pathname = usePathname();
+
+  const handleCurrentLanguage = () =>
+    currentLanguage === 'KR'
+      ? setCurrentLanguage('EN')
+      : setCurrentLanguage('KR');
 
   return (
     <div className='mr-4 hidden md:flex'>
@@ -57,6 +65,24 @@ export default function MainNav() {
         >
           깃허브
         </Link>
+        <a
+          className={cn(
+            'hidden text-foreground/60 transition-colors lg:block cursor-pointer select-none'
+          )}
+          onClick={handleCurrentLanguage}
+        >
+          <span
+            className={cn(currentLanguage === 'KR' && 'text-foreground/90')}
+          >
+            KR
+          </span>{' '}
+          /{' '}
+          <span
+            className={cn(currentLanguage === 'EN' && 'text-foreground/90')}
+          >
+            EN
+          </span>
+        </a>
       </nav>
     </div>
   );

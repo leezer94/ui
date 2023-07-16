@@ -5,7 +5,6 @@ import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Mdx } from '@/components/mdx-components';
 import { cn, absoluteUrl } from '@/lib';
-import { Button } from '@/components/ui/button';
 
 interface DocPageProps {
   params: {
