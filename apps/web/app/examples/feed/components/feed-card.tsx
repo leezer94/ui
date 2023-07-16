@@ -1,6 +1,11 @@
-import FeedDialog from '@/app/examples/feed/components/feed-dialog';
+import { ReactNode } from 'react';
+import { TITLE_PREFIX } from '@/config/rss-feed';
+import type { RssFeedType } from '@/types/rss-feed';
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { FeedDialog } from '@/app/examples/feed/components';
+import { cn } from '@/lib';
 import {
   Card,
   CardContent,
@@ -9,11 +14,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { TITLE_PREFIX } from '@/config/rss-feed';
-import { cn } from '@/lib';
-import { RssFeedType } from '@/types/rss-feed';
-import { ReactNode } from 'react';
 
 interface FeedCard {
   className?: string;
@@ -36,7 +36,7 @@ export default function FeedCard({ className, articles, selection }: FeedCard) {
           <div key={feed.link + idx}>
             <FeedDialog
               type='korean-fe'
-              button={
+              trigger={
                 <p className='cursor-pointer py-5 hover:text-red-300'>
                   {feed.title.replace(TITLE_PREFIX, '')}
                 </p>
@@ -48,7 +48,7 @@ export default function FeedCard({ className, articles, selection }: FeedCard) {
         ))}
       </CardContent>
       <CardFooter className='p-5'>
-        <Button variant='outline'>
+        <Button className='border-2' variant='outline' size='default'>
           <Icons.newspaper className='mr-1 h-3 w-3' />
           <p>
             Articles from{' '}

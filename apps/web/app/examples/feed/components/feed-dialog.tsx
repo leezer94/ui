@@ -15,26 +15,27 @@ import { Feed, PathType } from '@/types/rss-feed';
 import { buttonVariants } from '@/components/ui/button';
 import { useParsedFeed } from '@/hooks';
 import { TypographyMuted, TypographyP } from '@/components/ui/typography';
+import { TITLE_PREFIX } from '@/config/rss-feed';
 
 type ModalProps = {
   type: PathType;
-  button: ReactNode;
+  trigger: ReactNode;
   feed: Feed;
 };
 
 export default function FeedDialog({
   type,
-  button,
+  trigger,
   feed: { title, description, link, pubDate },
 }: ModalProps) {
   const { parsedFeed } = useParsedFeed(description);
 
   return (
     <Dialog>
-      <DialogTrigger asChild>{button}</DialogTrigger>
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className='min-w-[800px] p-10'>
         <DialogHeader className='mb-10'>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle>{title.replace(TITLE_PREFIX, '')}</DialogTitle>
         </DialogHeader>
         {/* <Suspense fallback={<ArticlesSkeleton />}> */}
         <div className='overflow-hidden'>

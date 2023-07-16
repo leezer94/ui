@@ -1,23 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import FeedCard from '@/app/examples/feed/components/feed-card';
 import type { RssFeedType, FEED_TITLE } from '@/types/rss-feed';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { ArticleSelection, FeedCard } from '@/app/examples/feed/components';
 
 interface Props {
   articles: RssFeedType[];
@@ -31,7 +16,7 @@ export default function UserFeed({ articles }: Props) {
     setCurrentArticle(article);
 
   return (
-    <div className='flex items-center justify-center gap-10'>
+    <div className='flex flex-col items-center justify-center gap-10 md:flex-row'>
       {articles.map(
         (article, idx) =>
           currentArticle === article.title && (
@@ -40,31 +25,15 @@ export default function UserFeed({ articles }: Props) {
               className='mt-5'
               articles={article}
               selection={
-                <Select onValueChange={handleCurrentArticle}>
-                  <SelectTrigger className='w-[180px]'>
-                    <SelectValue placeholder={currentArticle} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      {articles.map(({ title }, idx) => (
-                        <SelectItem key={`${title}/${idx}`} value={title}>
-                          {title}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+                <ArticleSelection
+                  articles={articles}
+                  currentArticle={currentArticle}
+                  handleCurrentArticle={handleCurrentArticle}
+                />
               }
             />
           )
       )}
-      <Card className='w-6/12'>
-        <CardHeader>
-          <CardTitle>Choose your feed</CardTitle>
-          <CardDescription>재미있는 피드를 추가해 보세요.</CardDescription>
-        </CardHeader>
-        <CardContent>Content</CardContent>
-      </Card>
     </div>
   );
 }

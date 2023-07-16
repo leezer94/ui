@@ -1,16 +1,24 @@
 import { ReactNode } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib';
 
 interface Props {
   icon: ReactNode;
   title: string;
   amount: string | number;
   description: string;
+  className?: string;
 }
 
-export default function Overview({ icon, title, amount, description }: Props) {
+export default function Overview({
+  icon,
+  title,
+  amount,
+  description,
+  className,
+}: Props) {
   return (
-    <Card>
+    <Card className={cn('', className)}>
       <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
         <CardTitle className='text-sm font-medium'>{title}</CardTitle>
         {icon}

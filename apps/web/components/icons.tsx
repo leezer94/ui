@@ -28,6 +28,15 @@ import {
   X,
   type Icon as LucideIcon,
   Newspaper,
+  ListTodo,
+  CheckCheck,
+  AlarmCheck,
+  Thermometer,
+  Sun,
+  Cloud,
+  Umbrella,
+  Snowflake,
+  Globe2,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -55,6 +64,15 @@ export const Icons = {
     </svg>
   ),
   close: X,
+  todo: ListTodo,
+  sunny: Sun,
+  cloudy: Cloud,
+  rainy: Umbrella,
+  snowy: Snowflake,
+  globe: Globe2,
+  temperature: Thermometer,
+  done: CheckCheck,
+  alarm: AlarmCheck,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
