@@ -2,6 +2,7 @@
 
 import { useHandleButtonVariant } from '@/components/examples/hooks';
 import { Button } from '@/components/ui/button';
+import { TypographyH4 } from '@/components/ui/typography';
 import {
   Select,
   SelectContent,
@@ -27,39 +28,45 @@ export default function ButtonDemo() {
   } = useHandleButtonVariant();
 
   return (
-    <div className='flex '>
-      <div className='flex items-center justify-between'>
-        <Select onValueChange={handleSetButtonVariant}>
-          <SelectTrigger className='w-[180px]'>
-            <SelectValue placeholder={buttonVariant} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              {BUTTON.variant.map((button, idx) => (
-                <SelectItem key={`${button}/${idx}`} value={button}>
-                  {button}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-        <Select onValueChange={handleSetButtonSize}>
-          <SelectTrigger className='w-[180px]'>
-            <SelectValue placeholder={buttonSize} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              {BUTTON.size.map((size, idx) => (
-                <SelectItem key={`${size}/${idx}`} value={size}>
-                  {size}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+    <div>
+      <div className='flex justify-between'>
+        <div>
+          <TypographyH4>Variants</TypographyH4>
+          <Select onValueChange={handleSetButtonVariant}>
+            <SelectTrigger className='w-[180px]'>
+              <SelectValue placeholder={buttonVariant} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {BUTTON.variant.map((button, idx) => (
+                  <SelectItem key={`${button}/${idx}`} value={button}>
+                    {button}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <TypographyH4>Size</TypographyH4>
+          <Select onValueChange={handleSetButtonSize}>
+            <SelectTrigger className='w-[180px]'>
+              <SelectValue placeholder={buttonSize} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {BUTTON.size.map((size, idx) => (
+                  <SelectItem key={`${size}/${idx}`} value={size}>
+                    {size}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
-      <div>
-        <Button variant='default' size='default'>
+      <div className='flex justify-center'>
+        <Button variant={buttonVariant} size={buttonSize}>
           {buttonVariant}
         </Button>
       </div>

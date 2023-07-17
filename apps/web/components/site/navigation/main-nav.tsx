@@ -29,7 +29,7 @@ export default function MainNav() {
         <Link
           href='/docs'
           className={cn(
-            'transition-colors hover:text-foreground/80',
+            'transition-colors hover:text-foreground/80 line-through pointer-events-none',
             pathname === '/docs' ? 'text-foreground' : 'text-foreground/60'
           )}
         >
@@ -67,7 +67,7 @@ export default function MainNav() {
         </Link>
         <a
           className={cn(
-            'hidden text-foreground/60 transition-colors lg:block cursor-pointer select-none'
+            'hidden text-foreground/60 transition-colors lg:block cursor-pointer select-none pointer-events-none'
           )}
           onClick={handleCurrentLanguage}
         >
@@ -78,7 +78,10 @@ export default function MainNav() {
           </span>{' '}
           /{' '}
           <span
-            className={cn(currentLanguage === 'EN' && 'text-foreground/90')}
+            className={cn(
+              'line-through',
+              currentLanguage === 'EN' && 'text-foreground/90'
+            )}
           >
             EN
           </span>
