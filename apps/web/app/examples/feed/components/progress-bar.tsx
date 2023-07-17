@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 interface Props {
   percentage: number;
-  defaultProgress: number;
+  defaultProgress?: number;
 }
 
 export default function ProgressBar({

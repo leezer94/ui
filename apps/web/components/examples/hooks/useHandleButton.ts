@@ -16,7 +16,7 @@ type ButtonSize = 'default' | 'sm' | 'lg';
 export default function useHandleButtonVariant() {
   const [buttonVariant, setButtonVariant] =
     useState<Button['variant']>('default');
-  const [buttonSize, setButtonSize] = useState<Button['size']>('lg');
+  const [buttonSize, setButtonSize] = useState<Button['size']>('default');
 
   return {
     handleSetButtonVariant: (variant: Button['variant']) =>
