@@ -43,13 +43,13 @@ const parseRssFeedArticles = async (url: string): Promise<RssFeedType> => {
   };
 };
 
-export default async function FeedPage() {
+export default async function FeedExample() {
   const articles = await Promise.all(
     FEED_URLS.map(async (url) => await parseRssFeedArticles(url))
   );
 
   return (
-    <div className=''>
+    <div>
       <p className='font-bold text-amber-600'>
         <Icons.rss />
         News Feed
@@ -81,7 +81,15 @@ export default async function FeedPage() {
                   <CardContent className='flex p-3 text-left'>
                     <p className='flex-1 p-0 text-left font-bold'>{title}</p>
                     <Separator className='mx-2 h-6' orientation='vertical' />
-                    <p className='flex-1'>{status}</p>
+                    <p
+                      className={cn(
+                        'flex-1',
+                        (status === 'Canceled' || status === 'Done') &&
+                          'line-through'
+                      )}
+                    >
+                      {status}
+                    </p>
                     <Separator className='mx-2 h-6' orientation='vertical' />
                     <p
                       className={cn(
