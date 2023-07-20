@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'leezer',
-      url: 'https://githb.com/leezer94',
+      url: 'https://github.com/leezer94',
     },
   ],
   creator: 'shadcn',

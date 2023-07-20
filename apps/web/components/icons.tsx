@@ -1,3 +1,4 @@
+import { ChevronDown } from 'lucide-react';
 import {
   AlertTriangle,
   ArrowRight,
@@ -76,6 +77,7 @@ export const Icons = {
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
+  chevronDown: ChevronDown,
   trash: Trash,
   post: FileText,
   page: File,
