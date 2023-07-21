@@ -5,6 +5,8 @@ import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Mdx } from '@/components/mdx-components';
 import { cn, absoluteUrl } from '@/lib';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import Balancer from 'react-wrap-balancer';
 
 interface DocPageProps {
   params: {
@@ -73,9 +75,7 @@ export default async function Page({ params }: DocPageProps) {
           </h1>
           {doc.description && (
             <p className='text-lg text-muted-foreground'>
-              {/* Balancer component */}
-              {doc.description}
-              {/* <Balancer>{doc.description}</Balancer> */}
+              <Balancer>{doc.description}</Balancer>
             </p>
           )}
         </div>
@@ -106,14 +106,15 @@ export default async function Page({ params }: DocPageProps) {
         ) : null}
         {/* <Separator className='my-4 md:my-6' /> */}
         <Mdx code={doc.body.code} />
-        {/* <Separator className='my-4 md:my-6' />
-        <DocsPager doc={doc} /> */}
+        {/* <Separator className='my-4 md:my-6' /> */}
+        {/* <DocsPager doc={doc} /> */}
       </div>
       <div className='hidden text-sm xl:block'>
         <div className='sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6'>
-          {/* <ScrollArea className='pb-10'>
-            <DashboardTableOfContents toc={toc} />
-          </ScrollArea> */}
+          <ScrollArea className='pb-10'>
+            {/* <DashboardTableOfContents toc={toc} /> */}
+            <div>TOC</div>
+          </ScrollArea>
         </div>
       </div>
     </main>
