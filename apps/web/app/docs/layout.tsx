@@ -14,7 +14,6 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
           <DocsSidebarNav items={DOCS_CONFIG.SIDE_NAV} />
         </ScrollArea>
       </aside>
-
       {children}
     </div>
   );

@@ -35,8 +35,8 @@ export const DOCS_CONFIG: DocsConfig = {
           items: [],
         },
         {
-          title: '템플릿',
-          href: '/docs/components/templates',
+          title: '카드',
+          href: '/docs/components/card',
           items: [],
         },
 
