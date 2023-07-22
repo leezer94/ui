@@ -39,10 +39,14 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/card',
           items: [],
         },
-
         {
           title: '버튼',
           href: '/docs/components/button',
+          items: [],
+        },
+        {
+          title: '캐러셀',
+          href: '/docs/components/carousel',
           items: [],
         },
       ],
