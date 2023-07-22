@@ -14,14 +14,6 @@ export default function Page() {
   return (
     <div className='container relative pb-10'>
       <PageHeader>
-        {/* <Link
-          href='/docs/forms/react-hook-form'
-          className='inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium'
-        >
-          🎉 <Separator className='mx-2 h-4' orientation='vertical' /> Building
-          forms with React Hook Form and Zod
-          <ChevronRight className='ml-1 h-4 w-4' />
-        </Link> */}
         <PageHeaderHeading>확장성을 고려한 컴포넌트</PageHeaderHeading>
         <PageHeaderDescription>
           접근가능성, 확장성을 고려한 재사용 가능한 컴포넌트를 로컬에 보유하고

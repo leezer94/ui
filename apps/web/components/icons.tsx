@@ -1,4 +1,3 @@
-import { ChevronDown } from 'lucide-react';
 import {
   AlertTriangle,
   ArrowRight,
@@ -38,6 +37,9 @@ import {
   Umbrella,
   Snowflake,
   Globe2,
+  ChevronDown,
+  Dot,
+  Circle,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -65,6 +67,8 @@ export const Icons = {
     </svg>
   ),
   close: X,
+  dot: Dot,
+  circle: Circle,
   todo: ListTodo,
   sunny: Sun,
   cloudy: Cloud,
