@@ -56,7 +56,7 @@ export const DOCS_CONFIG: DocsConfig = {
       items: [
         {
           title: '피드',
-          href: 'examples/feed',
+          href: '/examples/feed',
           items: [],
         },
       ],
