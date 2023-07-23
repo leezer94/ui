@@ -40,6 +40,9 @@ import {
   ChevronDown,
   Dot,
   Circle,
+  CheckSquare,
+  Square,
+  CircleDot,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -69,6 +72,7 @@ export const Icons = {
   close: X,
   dot: Dot,
   circle: Circle,
+  circleDot: CircleDot,
   todo: ListTodo,
   sunny: Sun,
   cloudy: Cloud,
@@ -82,6 +86,8 @@ export const Icons = {
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
   chevronDown: ChevronDown,
+  checkSquare: CheckSquare,
+  square: Square,
   trash: Trash,
   post: FileText,
   page: File,

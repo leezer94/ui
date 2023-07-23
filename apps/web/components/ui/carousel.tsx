@@ -73,7 +73,7 @@ const Carousel = React.forwardRef<
         ref={ref}
         className={cn(
           'group relative m-auto h-[780px] w-full max-w-[1400px] rounded-lg border bg-card text-card-foreground shadow-sm',
-          `${orientation === 'horizontal' && 'max-h-[390px] w-full'}`
+          `${orientation === 'horizontal' && 'max-h-[450px] w-full'}`
         )}
         {...props}
       >
