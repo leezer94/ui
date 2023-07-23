@@ -18,7 +18,7 @@ const CAROUSEL_IMAGES = [
 
 export default function CarouselDemo() {
   return (
-    <Carousel buttonColor='black'>
+    <Carousel buttonColor='black' orientation='horizontal'>
       <Card className='h-full'>
         <CardHeader>
           <CardTitle>Title1</CardTitle>
