@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 type Language = 'KR' | 'EN';
+
 export default function MainNav() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('KR');
   const pathname = usePathname();

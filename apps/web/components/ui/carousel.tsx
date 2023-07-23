@@ -4,6 +4,7 @@
 import * as React from 'react';
 import { Icons } from '@/components/icons';
 import { cn } from '@/lib';
+import { useCallback } from 'react';
 
 interface CarouselProps {
   buttonColor?: 'black' | 'white';
@@ -31,6 +32,7 @@ const Carousel = React.forwardRef<
       buttonColor = 'black',
       indicator = true,
       autoplay = false,
+      orientation = 'vertical',
       children,
       ...props
     },
@@ -38,40 +40,49 @@ const Carousel = React.forwardRef<
   ) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const elements = React.Children.toArray(children);
+    const isFirstSlide = currentIndex === 0;
+    const isLastSlide = currentIndex === elements.length - 1;
 
-    const prevSlide = () => {
-      const isFirstSlide = currentIndex === 0;
-      const newIndex = isFirstSlide ? elements?.length - 1 : currentIndex - 1;
+    const prevSlide = useCallback(() => {
+      const newIndex = isFirstSlide ? elements.length - 1 : currentIndex - 1;
+
       setCurrentIndex(newIndex);
-    };
+    }, [currentIndex, elements.length, isFirstSlide]);
 
-    const nextSlide = () => {
-      const isLastSlide = currentIndex === elements?.length - 1;
+    const nextSlide = useCallback(() => {
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
+
       setCurrentIndex(newIndex);
-    };
+    }, [currentIndex, isLastSlide]);
 
-    const keyboardPrevSlide = (event: React.KeyboardEvent<HTMLButtonElement>) =>
-      (event.key !== ' ' && event.key !== 'Enter') ?? prevSlide();
+    const keyboardSlide = useCallback(
+      (
+        event: React.KeyboardEvent<HTMLButtonElement>,
+        indicatorFn: () => void
+      ) => (event.key !== ' ' && event.key !== 'Enter') ?? indicatorFn(),
+      []
+    );
 
-    const keyboardNextSlide = (event: React.KeyboardEvent<HTMLButtonElement>) =>
-      (event.key !== ' ' && event.key !== 'Enter') ?? nextSlide();
-
-    const handleSlideIndex = (slideIndex: number) =>
-      setCurrentIndex(slideIndex);
+    const handleSlideIndex = useCallback(
+      (slideIndex: number) => setCurrentIndex(slideIndex),
+      []
+    );
 
     return (
       <div
         ref={ref}
-        className='group relative m-auto h-[780px] w-full max-w-[1400px] rounded-lg border bg-card text-card-foreground shadow-sm'
+        className={cn(
+          'group relative m-auto h-[780px] w-full max-w-[1400px] rounded-lg border bg-card text-card-foreground shadow-sm',
+          `${orientation === 'horizontal' && 'max-h-[450px] w-full'}`
+        )}
         {...props}
       >
-        {indicator && (
+        {indicator && !isFirstSlide && (
           <CarouselButton
             color={buttonColor}
             indication='left'
             prev={prevSlide}
-            keyPrev={keyboardPrevSlide}
+            keyPrev={(e) => keyboardSlide(e, prevSlide)}
           />
         )}
         {elements[currentIndex]}
@@ -84,25 +95,26 @@ const Carousel = React.forwardRef<
             >
               <Icons.dot
                 className={cn(
-                  'text-foreground/40 hover:text-foreground/60',
+                  'text-foreground/40 hover:text-foreground/60 duration-300',
                   `${idx === currentIndex && `text-foreground`}`
                 )}
               />
             </div>
           ))}
         </div>
-        {indicator && (
+        {indicator && !isLastSlide && (
           <CarouselButton
             color={buttonColor}
             indication='right'
             next={nextSlide}
-            keyNext={keyboardNextSlide}
+            keyPrev={(e) => keyboardSlide(e, nextSlide)}
           />
         )}
       </div>
     );
   }
 );
+
 Carousel.displayName = 'Carousel';
 
 const CarouselItem = React.forwardRef<
