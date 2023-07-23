@@ -43,6 +43,11 @@ import {
   CheckSquare,
   Square,
   CircleDot,
+  Monitor,
+  Battery,
+  BatteryFull,
+  MoveDiagonal,
+  PlugZap,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -74,6 +79,10 @@ export const Icons = {
   circle: Circle,
   circleDot: CircleDot,
   todo: ListTodo,
+  monitor: Monitor,
+  batteryFull: BatteryFull,
+  plugZap: PlugZap,
+  diagonal: MoveDiagonal,
   sunny: Sun,
   cloudy: Cloud,
   rainy: Umbrella,

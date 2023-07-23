@@ -40,16 +40,16 @@ const Carousel = React.forwardRef<
   ) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const elements = React.Children.toArray(children);
+    const isFirstSlide = currentIndex === 0;
+    const isLastSlide = currentIndex === elements.length - 1;
 
     const prevSlide = useCallback(() => {
-      const isFirstSlide = currentIndex === 0;
       const newIndex = isFirstSlide ? elements.length - 1 : currentIndex - 1;
 
       setCurrentIndex(newIndex);
     }, [currentIndex, elements.length]);
 
     const nextSlide = useCallback(() => {
-      const isLastSlide = currentIndex === elements.length - 1;
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
 
       setCurrentIndex(newIndex);
@@ -77,7 +77,7 @@ const Carousel = React.forwardRef<
         )}
         {...props}
       >
-        {indicator && (
+        {indicator && !isFirstSlide && (
           <CarouselButton
             color={buttonColor}
             indication='left'
@@ -95,14 +95,14 @@ const Carousel = React.forwardRef<
             >
               <Icons.dot
                 className={cn(
-                  'text-foreground/40 hover:text-foreground/60',
+                  'text-foreground/40 hover:text-foreground/60 duration-300',
                   `${idx === currentIndex && `text-foreground`}`
                 )}
               />
             </div>
           ))}
         </div>
-        {indicator && (
+        {indicator && !isLastSlide && (
           <CarouselButton
             color={buttonColor}
             indication='right'
