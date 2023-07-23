@@ -9,7 +9,8 @@
     "prepare": "husky install",
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "web:dev": "pnpm --filter web run dev",
-    "web:build": "pnpm --filter web run build"
+    "web:build": "pnpm --filter web run build",
+    "web:lint": "pnpm --filter web run lint"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",

@@ -47,13 +47,13 @@ const Carousel = React.forwardRef<
       const newIndex = isFirstSlide ? elements.length - 1 : currentIndex - 1;
 
       setCurrentIndex(newIndex);
-    }, [currentIndex, elements.length]);
+    }, [currentIndex, elements.length, isFirstSlide]);
 
     const nextSlide = useCallback(() => {
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
 
       setCurrentIndex(newIndex);
-    }, [currentIndex, elements.length]);
+    }, [currentIndex, isLastSlide]);
 
     const keyboardSlide = useCallback(
       (
