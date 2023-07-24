@@ -1,3 +1,5 @@
+'use client';
+
 import { Icons } from '@/components/icons';
 import {
   Button,
@@ -10,11 +12,8 @@ import {
   Separator,
 } from '@/components/ui';
 import { Carousel } from '@/components/ui/carousel';
-import {
-  TypographyH3,
-  TypographyH4,
-  TypographyMuted,
-} from '@/components/ui/typography';
+import { TypographyH4, TypographyMuted } from '@/components/ui/typography';
+import { useState } from 'react';
 
 const CAROUSEL_IMAGES = [
   'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',
@@ -22,18 +21,37 @@ const CAROUSEL_IMAGES = [
 ];
 
 export default function CarouselDemo() {
+  const [autoplay, setAutoplay] = useState(true);
+
+  const handleAutoPlay = () => setAutoplay(!autoplay);
+
   return (
-    <Carousel buttonColor='black' orientation='horizontal'>
-      <IssueTemplateCard />
-      <Card2 />
-      {CAROUSEL_IMAGES.map((url, idx) => (
-        <div
-          className='h-full w-full rounded-lg bg-cover bg-center duration-500'
-          style={{ backgroundImage: `url(${url})` }}
-          key={`${url}/${idx}`}
-        />
-      ))}
-    </Carousel>
+    <>
+      <div className='pb-5'>
+        <Button
+          variant={autoplay ? 'outline' : 'default'}
+          size='sm'
+          onClick={handleAutoPlay}
+        >
+          Autoplay {autoplay ? 'Off' : 'ON'}
+        </Button>
+      </div>
+      <Carousel
+        buttonColor='black'
+        orientation='horizontal'
+        autoplay={autoplay}
+      >
+        <IssueTemplateCard />
+        <AppleTemplateCard />
+        {CAROUSEL_IMAGES.map((url, idx) => (
+          <div
+            className='h-full w-full rounded-lg bg-cover bg-center duration-500'
+            style={{ backgroundImage: `url(${url})` }}
+            key={`${url}/${idx}`}
+          />
+        ))}
+      </Carousel>
+    </>
   );
 }
 
@@ -120,7 +138,7 @@ function IssueTemplateCard() {
     </Card>
   );
 }
-function Card2() {
+function AppleTemplateCard() {
   const IMAGES = [
     'https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80',
     'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',

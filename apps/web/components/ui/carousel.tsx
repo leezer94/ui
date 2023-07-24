@@ -4,14 +4,13 @@
 import * as React from 'react';
 import { Icons } from '@/components/icons';
 import { cn } from '@/lib';
-import { useCallback } from 'react';
 
 interface CarouselProps {
   buttonColor?: 'black' | 'white';
-  slides: React.ReactNode[];
   indicator?: boolean;
-  orientation: 'vertical' | 'horizontal';
+  orientation?: 'vertical' | 'horizontal';
   autoplay?: boolean;
+  autoplayInterval: number;
 }
 
 interface CarouselButtonProps {
@@ -33,6 +32,7 @@ const Carousel = React.forwardRef<
       indicator = true,
       autoplay = false,
       orientation = 'vertical',
+      autoplayInterval = 5000,
       children,
       ...props
     },
@@ -43,19 +43,19 @@ const Carousel = React.forwardRef<
     const isFirstSlide = currentIndex === 0;
     const isLastSlide = currentIndex === elements.length - 1;
 
-    const prevSlide = useCallback(() => {
+    const prevSlide = React.useCallback(() => {
       const newIndex = isFirstSlide ? elements.length - 1 : currentIndex - 1;
 
       setCurrentIndex(newIndex);
     }, [currentIndex, elements.length, isFirstSlide]);
 
-    const nextSlide = useCallback(() => {
+    const nextSlide = React.useCallback(() => {
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
 
       setCurrentIndex(newIndex);
     }, [currentIndex, isLastSlide]);
 
-    const keyboardSlide = useCallback(
+    const keyboardSlide = React.useCallback(
       (
         event: React.KeyboardEvent<HTMLButtonElement>,
         indicatorFn: () => void
@@ -63,10 +63,20 @@ const Carousel = React.forwardRef<
       []
     );
 
-    const handleSlideIndex = useCallback(
+    const handleSlideIndex = React.useCallback(
       (slideIndex: number) => setCurrentIndex(slideIndex),
       []
     );
+
+    React.useEffect(() => {
+      if (autoplay) {
+        const autoplayTimer = setInterval(() => {
+          nextSlide();
+        }, autoplayInterval);
+
+        return () => clearInterval(autoplayTimer);
+      }
+    }, [nextSlide, autoplayInterval, autoplay]);
 
     return (
       <div
