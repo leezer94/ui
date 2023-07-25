@@ -31,7 +31,7 @@ const Carousel = React.forwardRef<
       indicator = true,
       autoplay = false,
       orientation = 'vertical',
-      autoplayInterval = 1000,
+      autoplayInterval = 3000,
       children,
       ...props
     },
@@ -74,10 +74,8 @@ const Carousel = React.forwardRef<
     );
 
     React.useEffect(() => {
-      let autoplayTimer: ReturnType<typeof setInterval>;
-
       if (autoplay && !isPaused) {
-        autoplayTimer = setInterval(() => {
+        const autoplayTimer = setInterval(() => {
           nextSlide();
         }, autoplayInterval);
 
@@ -94,6 +92,8 @@ const Carousel = React.forwardRef<
         )}
         onMouseOver={() => handleSlidePause(true)}
         onMouseOut={() => handleSlidePause(false)}
+        aria-roledescription='carousel'
+        role='carousel'
         {...props}
       >
         {indicator && !isFirstSlide && (
@@ -102,11 +102,10 @@ const Carousel = React.forwardRef<
             indication='left'
             prev={prevSlide}
             keyPrev={(e) => keyboardSlide(e, prevSlide)}
-            onFocus={() => handleSlidePause(true)}
-            onBlur={() => handleSlidePause(false)}
+            aria-label='prev-button'
           />
         )}
-        <div className='h-full duration-500'>{elements[currentIndex]}</div>
+        {elements[currentIndex]}
         <div className='top-4 flex justify-center py-2'>
           {elements.map((_, idx) => (
             <div
@@ -129,8 +128,7 @@ const Carousel = React.forwardRef<
             indication='right'
             next={nextSlide}
             keyPrev={(e) => keyboardSlide(e, nextSlide)}
-            onFocus={() => handleSlidePause(true)}
-            onBlur={() => handleSlidePause(false)}
+            aria-label='next-button'
           />
         )}
       </div>
@@ -142,9 +140,16 @@ Carousel.displayName = 'Carousel';
 
 const CarouselItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { src: string }
->(({ className, src, ...props }, ref) => (
-  <div className={cn('', className)} ref={ref} {...props}></div>
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    className={cn('h-full duration-500', className)}
+    ref={ref}
+    {...props}
+    aria-roledescription='slide'
+    aria-label='slide'
+    role='slide'
+  ></div>
 ));
 
 CarouselItem.displayName = 'CarouselItem';

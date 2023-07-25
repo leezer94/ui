@@ -11,7 +11,7 @@ import {
   CardTitle,
   Separator,
 } from '@/components/ui';
-import { Carousel } from '@/components/ui/carousel';
+import { Carousel, CarouselItem } from '@/components/ui/carousel';
 import { TypographyH4, TypographyMuted } from '@/components/ui/typography';
 import { useState } from 'react';
 
@@ -41,7 +41,9 @@ export default function CarouselDemo() {
         orientation='horizontal'
         autoplay={autoplay}
       >
-        <IssueTemplateCard />
+        <CarouselItem>
+          <IssueTemplateCard />
+        </CarouselItem>
         <AppleTemplateCard />
         {CAROUSEL_IMAGES.map((url, idx) => (
           <div
