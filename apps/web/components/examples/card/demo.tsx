@@ -19,11 +19,11 @@ export default function CardDemo() {
 
   return (
     <Card className='flex h-full w-full justify-evenly'>
-      <Card className='flex-1 select-none'>
+      <Card className='select-none rounded-none'>
         <Image
-          className='flex-1'
+          className='h-full flex-1 bg-cover'
           width={300}
-          height={550}
+          height={500}
           src={IMAGE}
           alt='MacBook pro 13'
         />

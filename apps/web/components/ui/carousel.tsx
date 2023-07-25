@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import * as React from 'react';
@@ -6,19 +5,19 @@ import { Icons } from '@/components/icons';
 import { cn } from '@/lib';
 
 interface CarouselProps {
-  buttonColor?: 'black' | 'white';
-  indicator?: boolean;
-  orientation?: 'vertical' | 'horizontal';
-  autoplay?: boolean;
+  buttonColor: 'black' | 'white';
+  indicator: boolean;
+  orientation: 'vertical' | 'horizontal';
+  autoplay: boolean;
   autoplayInterval: number;
 }
 
 interface CarouselButtonProps {
   indication: 'left' | 'right';
-  prev?: () => void;
-  next?: () => void;
-  keyPrev?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
-  keyNext?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+  prev: () => void;
+  next: () => void;
+  keyPrev: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+  keyNext: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
 }
 
 const Carousel = React.forwardRef<
@@ -32,12 +31,13 @@ const Carousel = React.forwardRef<
       indicator = true,
       autoplay = false,
       orientation = 'vertical',
-      autoplayInterval = 5000,
+      autoplayInterval = 1000,
       children,
       ...props
     },
     ref
   ) => {
+    const [isPaused, setIsPaused] = React.useState(false);
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const elements = React.Children.toArray(children);
     const isFirstSlide = currentIndex === 0;
@@ -68,15 +68,22 @@ const Carousel = React.forwardRef<
       []
     );
 
+    const handleSlidePause = React.useCallback(
+      (boolean: boolean) => setIsPaused(boolean),
+      []
+    );
+
     React.useEffect(() => {
-      if (autoplay) {
-        const autoplayTimer = setInterval(() => {
+      let autoplayTimer: ReturnType<typeof setInterval>;
+
+      if (autoplay && !isPaused) {
+        autoplayTimer = setInterval(() => {
           nextSlide();
         }, autoplayInterval);
 
         return () => clearInterval(autoplayTimer);
       }
-    }, [nextSlide, autoplayInterval, autoplay]);
+    }, [nextSlide, autoplayInterval, autoplay, isPaused]);
 
     return (
       <div
@@ -85,6 +92,8 @@ const Carousel = React.forwardRef<
           'group relative m-auto h-[780px] w-full max-w-[1400px] rounded-lg border bg-card text-card-foreground shadow-sm',
           `${orientation === 'horizontal' && 'max-h-[450px] w-full'}`
         )}
+        onMouseOver={() => handleSlidePause(true)}
+        onMouseOut={() => handleSlidePause(false)}
         {...props}
       >
         {indicator && !isFirstSlide && (
@@ -93,9 +102,11 @@ const Carousel = React.forwardRef<
             indication='left'
             prev={prevSlide}
             keyPrev={(e) => keyboardSlide(e, prevSlide)}
+            onFocus={() => handleSlidePause(true)}
+            onBlur={() => handleSlidePause(false)}
           />
         )}
-        {elements[currentIndex]}
+        <div className='h-full duration-500'>{elements[currentIndex]}</div>
         <div className='top-4 flex justify-center py-2'>
           {elements.map((_, idx) => (
             <div
@@ -118,6 +129,8 @@ const Carousel = React.forwardRef<
             indication='right'
             next={nextSlide}
             keyPrev={(e) => keyboardSlide(e, nextSlide)}
+            onFocus={() => handleSlidePause(true)}
+            onBlur={() => handleSlidePause(false)}
           />
         )}
       </div>
@@ -138,7 +151,7 @@ CarouselItem.displayName = 'CarouselItem';
 
 const CarouselButton = React.forwardRef<
   HTMLButtonElement,
-  React.HTMLAttributes<HTMLButtonElement> & CarouselButtonProps
+  React.HTMLAttributes<HTMLButtonElement> & Partial<CarouselButtonProps>
 >(({ indication, color, prev, keyPrev, next, keyNext, ...props }, ref) =>
   indication === 'left' ? (
     <button

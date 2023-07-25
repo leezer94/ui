@@ -33,7 +33,7 @@ export default function CarouselDemo() {
           size='sm'
           onClick={handleAutoPlay}
         >
-          Autoplay {autoplay ? 'Off' : 'ON'}
+          Autoplay {autoplay ? 'Off' : 'On'}
         </Button>
       </div>
       <Carousel
@@ -57,7 +57,7 @@ export default function CarouselDemo() {
 
 function IssueTemplateCard() {
   return (
-    <Card className='h-full overflow-scroll'>
+    <Card className='h-full overflow-scroll duration-500'>
       <CardHeader>
         <div className='flex items-baseline justify-between'>
           <CardTitle className='text-xl'>Issue Template</CardTitle>
@@ -144,7 +144,7 @@ function AppleTemplateCard() {
     'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
   ];
   return (
-    <Card className='flex h-full justify-evenly'>
+    <Card className='flex h-full justify-evenly duration-500'>
       <div
         className='h-full w-full flex-1 bg-cover bg-center'
         style={{ backgroundImage: `url(${IMAGES[1]})` }}
