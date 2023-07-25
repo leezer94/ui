@@ -1,25 +1,23 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import * as React from 'react';
 import { Icons } from '@/components/icons';
 import { cn } from '@/lib';
-import { useCallback } from 'react';
 
 interface CarouselProps {
-  buttonColor?: 'black' | 'white';
-  slides: React.ReactNode[];
-  indicator?: boolean;
+  buttonColor: 'black' | 'white';
+  indicator: boolean;
   orientation: 'vertical' | 'horizontal';
-  autoplay?: boolean;
+  autoplay: boolean;
+  autoplayInterval: number;
 }
 
 interface CarouselButtonProps {
   indication: 'left' | 'right';
-  prev?: () => void;
-  next?: () => void;
-  keyPrev?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
-  keyNext?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+  prev: () => void;
+  next: () => void;
+  keyPrev: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+  keyNext: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
 }
 
 const Carousel = React.forwardRef<
@@ -33,29 +31,31 @@ const Carousel = React.forwardRef<
       indicator = true,
       autoplay = false,
       orientation = 'vertical',
+      autoplayInterval = 3000,
       children,
       ...props
     },
     ref
   ) => {
+    const [isPaused, setIsPaused] = React.useState(false);
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const elements = React.Children.toArray(children);
     const isFirstSlide = currentIndex === 0;
     const isLastSlide = currentIndex === elements.length - 1;
 
-    const prevSlide = useCallback(() => {
+    const prevSlide = React.useCallback(() => {
       const newIndex = isFirstSlide ? elements.length - 1 : currentIndex - 1;
 
       setCurrentIndex(newIndex);
     }, [currentIndex, elements.length, isFirstSlide]);
 
-    const nextSlide = useCallback(() => {
+    const nextSlide = React.useCallback(() => {
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
 
       setCurrentIndex(newIndex);
     }, [currentIndex, isLastSlide]);
 
-    const keyboardSlide = useCallback(
+    const keyboardSlide = React.useCallback(
       (
         event: React.KeyboardEvent<HTMLButtonElement>,
         indicatorFn: () => void
@@ -63,10 +63,25 @@ const Carousel = React.forwardRef<
       []
     );
 
-    const handleSlideIndex = useCallback(
+    const handleSlideIndex = React.useCallback(
       (slideIndex: number) => setCurrentIndex(slideIndex),
       []
     );
+
+    const handleSlidePause = React.useCallback(
+      (boolean: boolean) => setIsPaused(boolean),
+      []
+    );
+
+    React.useEffect(() => {
+      if (autoplay && !isPaused) {
+        const autoplayTimer = setInterval(() => {
+          nextSlide();
+        }, autoplayInterval);
+
+        return () => clearInterval(autoplayTimer);
+      }
+    }, [nextSlide, autoplayInterval, autoplay, isPaused]);
 
     return (
       <div
@@ -75,6 +90,10 @@ const Carousel = React.forwardRef<
           'group relative m-auto h-[780px] w-full max-w-[1400px] rounded-lg border bg-card text-card-foreground shadow-sm',
           `${orientation === 'horizontal' && 'max-h-[450px] w-full'}`
         )}
+        onMouseOver={() => handleSlidePause(true)}
+        onMouseOut={() => handleSlidePause(false)}
+        aria-roledescription='carousel'
+        role='carousel'
         {...props}
       >
         {indicator && !isFirstSlide && (
@@ -83,6 +102,7 @@ const Carousel = React.forwardRef<
             indication='left'
             prev={prevSlide}
             keyPrev={(e) => keyboardSlide(e, prevSlide)}
+            aria-label='prev-button'
           />
         )}
         {elements[currentIndex]}
@@ -108,6 +128,7 @@ const Carousel = React.forwardRef<
             indication='right'
             next={nextSlide}
             keyPrev={(e) => keyboardSlide(e, nextSlide)}
+            aria-label='next-button'
           />
         )}
       </div>
@@ -119,16 +140,23 @@ Carousel.displayName = 'Carousel';
 
 const CarouselItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { src: string }
->(({ className, src, ...props }, ref) => (
-  <div className={cn('', className)} ref={ref} {...props}></div>
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    className={cn('h-full duration-500', className)}
+    ref={ref}
+    {...props}
+    aria-roledescription='slide'
+    aria-label='slide'
+    role='slide'
+  ></div>
 ));
 
 CarouselItem.displayName = 'CarouselItem';
 
 const CarouselButton = React.forwardRef<
   HTMLButtonElement,
-  React.HTMLAttributes<HTMLButtonElement> & CarouselButtonProps
+  React.HTMLAttributes<HTMLButtonElement> & Partial<CarouselButtonProps>
 >(({ indication, color, prev, keyPrev, next, keyNext, ...props }, ref) =>
   indication === 'left' ? (
     <button
