@@ -105,7 +105,9 @@ const Carousel = React.forwardRef<
             aria-label='prev-button'
           />
         )}
-        {elements[currentIndex]}
+        {/* children elements */}
+        <div className='h-full '>{elements[currentIndex]}</div>
+        {/*  */}
         <div className='top-4 flex justify-center py-2'>
           {elements.map((_, idx) => (
             <div

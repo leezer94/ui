@@ -49,6 +49,11 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/carousel',
           items: [],
         },
+        {
+          title: '아바타',
+          href: '/docs/components/avatar',
+          items: [],
+        },
       ],
     },
     {

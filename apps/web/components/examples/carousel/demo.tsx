@@ -41,9 +41,9 @@ export default function CarouselDemo() {
         orientation='horizontal'
         autoplay={autoplay}
       >
-        <CarouselItem>
-          <IssueTemplateCard />
-        </CarouselItem>
+        {/* <CarouselItem> */}
+        <IssueTemplateCard />
+        {/* </CarouselItem> */}
         <AppleTemplateCard />
         {CAROUSEL_IMAGES.map((url, idx) => (
           <div
