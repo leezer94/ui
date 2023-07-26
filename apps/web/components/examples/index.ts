@@ -1,3 +1,4 @@
+import AvatarDemo from '@/components/examples/avatar/demo';
 import AccordionDemo from './accordion/demo';
 import ButtonDemo from './button/demo';
 import CardDemo from './card/demo';
@@ -8,4 +9,5 @@ export const examples = {
   ButtonDemo,
   CardDemo,
   CarouselDemo,
+  AvatarDemo,
 };
