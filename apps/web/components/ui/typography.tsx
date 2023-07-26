@@ -59,9 +59,20 @@ export function TypographyH3({
   );
 }
 
-export function TypographyH4({ children }: { children: Typography }) {
+export function TypographyH4({
+  className,
+  children,
+}: {
+  className: string;
+  children: Typography;
+}) {
   return (
-    <h4 className='scroll-m-20 text-xl font-semibold tracking-tight'>
+    <h4
+      className={cn(
+        'scroll-m-20 text-xl font-semibold tracking-tight',
+        className
+      )}
+    >
       {children}
     </h4>
   );
