@@ -5,7 +5,7 @@ import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cn } from '@/lib/utils';
 
 interface AvatarSize {
-  size: 'default' | 'lg';
+  size: number;
 }
 
 const Avatar = React.forwardRef<
@@ -16,10 +16,8 @@ const Avatar = React.forwardRef<
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(
-        'rounded-full border-orange-500 border-2 flex justify-center items-center select-none align-middle overflow-hidden bg-blackA3',
-        `h-[${size === 'default' ? 45 : 90}px] w-[${
-          size === 'default' ? 45 : 90
-        }px]`,
+        `rounded-full h-[${size}px] w-[${size}px] border-orange-500 border-2 flex justify-center items-center select-none align-middle overflow-hidden bg-blackA3`,
+
         className
       )}
       {...props}
@@ -38,7 +36,10 @@ const AvatarImage = React.forwardRef<
   <AvatarPrimitive.Image
     ref={ref}
     onLoadingStatusChange={onLoadingStatusChange}
-    className={cn('h-full w-full rounded-[inherit] object-cover', className)}
+    className={cn(
+      'h-full w-full rounded-[inherit] object-cover bg-cover',
+      className
+    )}
     {...props}
   />
 ));
