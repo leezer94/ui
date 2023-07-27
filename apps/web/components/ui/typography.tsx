@@ -63,7 +63,7 @@ export function TypographyH4({
   className,
   children,
 }: {
-  className: string;
+  className?: string;
   children: Typography;
 }) {
   return (
