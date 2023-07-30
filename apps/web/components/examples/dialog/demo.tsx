@@ -5,9 +5,9 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
+  DialogContent,
+  DialogHeader,
 } from '@/components/ui';
-
-import { DialogClose, DialogContent } from '@radix-ui/react-dialog';
 
 export default function DialogDemo() {
   return (
@@ -16,11 +16,10 @@ export default function DialogDemo() {
         <Button>Dialog</Button>
       </DialogTrigger>
       <DialogContent>
-        <DialogTitle>Title</DialogTitle>
-        <DialogClose>
-          <Button variant='destructive'>x</Button>
-        </DialogClose>
-        <DialogDescription>Description</DialogDescription>
+        <DialogHeader>
+          <DialogTitle>Title</DialogTitle>
+          <DialogDescription>Description</DialogDescription>
+        </DialogHeader>
         <DialogFooter>Footer</DialogFooter>
       </DialogContent>
     </Dialog>

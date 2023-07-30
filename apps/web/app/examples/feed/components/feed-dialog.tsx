@@ -38,7 +38,6 @@ export default function FeedDialog({
         <DialogHeader className='mb-10'>
           <DialogTitle>{title.replace(TITLE_PREFIX, '')}</DialogTitle>
         </DialogHeader>
-        {/* <Suspense fallback={<ArticlesSkeleton />}> */}
         <div className='overflow-hidden'>
           <TypographyP className='max-h-[300px] overflow-auto'>
             {type === 'BBC Sport - Football'
@@ -48,8 +47,6 @@ export default function FeedDialog({
               : parsedFeed}
           </TypographyP>
         </div>
-        {/* </Suspense> */}
-
         <DialogFooter className='mt-10'>
           <div className='flex w-full flex-row items-center justify-between'>
             <TypographyMuted>{pubDate}</TypographyMuted>

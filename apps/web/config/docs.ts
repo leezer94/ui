@@ -55,7 +55,7 @@ export const DOCS_CONFIG: DocsConfig = {
           items: [],
         },
         {
-          title: '다이알로그 모달',
+          title: '다이얼로그 모달',
           href: '/docs/components/dialog',
           items: [],
         },
