@@ -4,19 +4,15 @@ import React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cn } from '@/lib/utils';
 
-interface AvatarSize {
-  size: number;
-}
-
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & AvatarSize
->(({ className, children, size, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
+>(({ className, children, ...props }, ref) => {
   return (
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(
-        `rounded-full h-[${size}px] w-[${size}px] border-orange-500 border-2 flex justify-center items-center select-none align-middle overflow-hidden bg-blackA3`,
+        `rounded-full h-[45px] w-[45px] border-orange-500 border-2 flex justify-center items-center select-none align-middle overflow-hidden bg-blackA3`,
 
         className
       )}

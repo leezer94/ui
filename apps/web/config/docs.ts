@@ -54,6 +54,11 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/avatar',
           items: [],
         },
+        {
+          title: '다이얼로그 모달',
+          href: '/docs/components/dialog',
+          items: [],
+        },
       ],
     },
     {

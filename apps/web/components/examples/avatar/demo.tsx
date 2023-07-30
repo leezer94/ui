@@ -68,7 +68,7 @@ export default function AvatarDemo() {
               <Avatar
                 onMouseEnter={() => handleIsHovered(true)}
                 onMouseLeave={() => handleIsHovered(false)}
-                size={size}
+                // size={size}
               >
                 <AvatarImage src={src} alt={alt} />
                 <AvatarFallback>{fallback}</AvatarFallback>
@@ -90,7 +90,6 @@ export default function AvatarDemo() {
                 <Avatar
                   onMouseEnter={() => handleIsHovered(true)}
                   onMouseLeave={() => handleIsHovered(false)}
-                  size={size}
                 >
                   <AvatarImage src={src} alt={alt} />
                   <AvatarFallback>{fallback}</AvatarFallback>
