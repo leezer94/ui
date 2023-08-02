@@ -1,7 +1,7 @@
 'use client';
 
-import { Progress } from '@/components/ui/progress';
 import { useEffect, useState } from 'react';
+import { Progress } from 'ui/components/progress';
 
 interface Props {
   percentage: number;

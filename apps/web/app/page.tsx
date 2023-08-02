@@ -6,7 +6,7 @@ import {
 } from '@/components/page-header';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from 'ui/components/button';
 import { cn } from '@/lib';
 import { Icons } from '@/components/icons';
 

@@ -1,8 +1,11 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
+import { Link as LinkIcon } from 'lucide-react';
+import { sanitizeDescription } from '@/lib';
+import { useParsedFeed } from '@/hooks';
+import { TITLE_PREFIX } from '@/config/rss-feed';
 import {
   Dialog,
   DialogContent,
@@ -10,13 +13,10 @@ import {
   DialogTrigger,
   DialogHeader,
   DialogFooter,
-} from '@/components/ui/dialog';
-import { sanitizeDescription } from '@/lib';
+} from 'ui/components/dialog';
 import { Feed, PathType } from '@/types/rss-feed';
-import { buttonVariants } from '@/components/ui/button';
-import { useParsedFeed } from '@/hooks';
-import { TypographyMuted, TypographyP } from '@/components/ui/typography';
-import { TITLE_PREFIX } from '@/config/rss-feed';
+import { buttonVariants } from 'ui/components/button';
+import { TypographyMuted, TypographyP } from 'ui/components/typography';
 
 type ModalProps = {
   type: PathType;

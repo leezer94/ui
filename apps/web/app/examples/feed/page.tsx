@@ -16,8 +16,8 @@ import {
   ProgressBar,
   TodoDialog,
 } from '@/app/examples/feed/components';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+import { Card, CardContent, CardHeader, CardTitle } from 'ui/components/card';
+import { Separator } from 'ui/components/separator';
 import { cn } from '@/lib';
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui';
-import { TypographyH4 } from '@/components/ui/typography';
-import { cn } from '@/lib';
 import { useCallback, useState } from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from 'ui/components/avatar';
+import { TypographyH4 } from 'ui/components/typography';
+import { cn } from '@/lib';
 
 interface AvatarProps {
   src?: string;
