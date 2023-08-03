@@ -1,5 +1,5 @@
 import { DocsSidebarNav } from '@/components/site/navigation/sidebar-nav';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea } from 'ui/components';
 import { DOCS_CONFIG } from '@/config/docs';
 
 interface DocsLayoutProps {

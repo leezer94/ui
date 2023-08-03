@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from 'ui/components/select';
 import { RssFeedType, FEED_TITLE } from '@/types/rss-feed';
 
 interface Props {

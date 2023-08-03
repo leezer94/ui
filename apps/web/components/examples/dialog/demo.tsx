@@ -1,5 +1,4 @@
 import {
-  Button,
   Dialog,
   DialogTrigger,
   DialogTitle,
@@ -7,7 +6,8 @@ import {
   DialogDescription,
   DialogContent,
   DialogHeader,
-} from '@/components/ui';
+} from 'ui/components/dialog';
+import { Button } from 'ui/components/button';
 
 export default function DialogDemo() {
   return (

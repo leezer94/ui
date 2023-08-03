@@ -1,12 +1,10 @@
-'use client';
-
 import {
   Accordion,
   AccordionContent,
   AccordionDescription,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from 'ui/components/accordion';
 
 export default function AccordionDemo() {
   return (

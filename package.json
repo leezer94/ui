@@ -10,7 +10,9 @@
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "web:dev": "pnpm --filter web run dev",
     "web:build": "pnpm --filter web run build",
-    "web:lint": "pnpm --filter web run lint"
+    "web:lint": "pnpm --filter web run lint",
+    "storybook": "pnpm --filter storybook run storybook",
+    "storybook:build": "pnpm --filter storybook run build-storybook"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",

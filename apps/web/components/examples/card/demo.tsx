@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Icons } from '@/components/icons';
 import {
   Button,
@@ -7,11 +8,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  Carousel,
   Separator,
-} from '@/components/ui';
-import { TypographyMuted } from '@/components/ui/typography';
-import Image from 'next/image';
+  TypographyMuted,
+} from 'ui/components';
 
 export default function CardDemo() {
   const IMAGE =

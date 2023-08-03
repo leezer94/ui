@@ -1,8 +1,8 @@
 'use client';
 
 import { useHandleButtonVariant } from '@/components/examples/hooks';
-import { Button } from '@/components/ui/button';
-import { TypographyH4 } from '@/components/ui/typography';
+import { Button } from 'ui/components/button';
+import { TypographyH4 } from 'ui/components/typography';
 import {
   Select,
   SelectContent,
@@ -10,7 +10,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from 'ui/components/select';
 
 const BUTTON = {
   variant: ['default', 'secondary', 'destructive', 'ghost', 'link', 'disabled'],

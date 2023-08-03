@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-
 import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
+
+import { buttonVariants } from 'ui/components/button';
 import {
   PageHeader,
   PageHeaderDescription,

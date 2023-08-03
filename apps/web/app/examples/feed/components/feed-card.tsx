@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import { TITLE_PREFIX } from '@/config/rss-feed';
 import type { RssFeedType } from '@/types/rss-feed';
 import { Icons } from '@/components/icons';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import { Button } from 'ui/components/button';
+import { Separator } from 'ui/components/separator';
 import { FeedDialog } from '@/app/examples/feed/components';
 import { cn } from '@/lib';
 import {
@@ -13,7 +13,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from 'ui/components/card';
 
 interface FeedCard {
   className?: string;

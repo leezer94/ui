@@ -1,11 +1,11 @@
+import { ReactNode } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { ReactNode } from 'react';
+} from 'ui/components/dialog';
 
 interface Props {
   trigger: ReactNode;
