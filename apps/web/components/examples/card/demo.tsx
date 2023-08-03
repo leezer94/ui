@@ -11,75 +11,90 @@ import {
   Separator,
   TypographyMuted,
 } from 'ui/components';
+import {
+  MotionValue,
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
+import { useCallback, MouseEvent, useRef } from 'react';
 
 export default function CardDemo() {
-  const IMAGE =
-    'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-digitalmat-gallery-2-202206_GEO_KR?wid=364&hei=333&fmt=png-alpha&.v=1665427482788';
+  const cardRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const depth = 45;
+
+  const handleMouseMove = useCallback(
+    ({ currentTarget, clientX, clientY }: MouseEvent) => {
+      let { left, top } = currentTarget.getBoundingClientRect();
+
+      mouseX.set(clientX - left);
+      mouseY.set(clientY - top);
+    },
+    [mouseX, mouseY]
+  );
+
+  let rotateX = useTransform<number, number>(mouseX, (newMouseX) => {
+    if (!cardRef.current) return 0;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const newRotateX = newMouseX - rect.left - rect.height / 2;
+
+    return -newRotateX / depth;
+  });
+  let rotateY = useTransform<number, number>(mouseY, (newMouseY) => {
+    if (!cardRef.current) return 0;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const newRotateY = newMouseY - rect.top - rect.width / 2;
+
+    return newRotateY / depth;
+  });
 
   return (
-    <Card className='flex h-full w-full justify-evenly'>
-      <Card className='select-none rounded-none'>
-        <Image
-          className='h-full flex-1 bg-cover'
-          width={300}
-          height={500}
-          src={IMAGE}
-          alt='MacBook pro 13'
-        />
-      </Card>
-      <Card className='flex-1 select-none rounded-none'>
-        <CardHeader>
-          <CardTitle>MacBook Pro 13</CardTitle>
-          <div className='flex items-baseline justify-between'>
-            <CardDescription>₩1,790,000부터</CardDescription>
-            <Button
-              className='pointer-events-none rounded-3xl bg-blue-500'
-              size='sm'
-            >
-              구입하기
-            </Button>
-          </div>
-        </CardHeader>
-        <CardContent className='flex flex-col gap-y-2'>
-          <div className='flex items-center gap-x-2'>
-            <Icons.monitor size={30} />
-            <TypographyMuted className='overflow-hidden text-ellipsis text-xs'>
-              차세대 Apple M2 칩과 전문가급 성능을 유지해주는 액티브 쿨링
-              시스템으로 더 많은 일을 더 빠르게 처리
-            </TypographyMuted>
-          </div>
-          <Separator />
-          <div className='flex items-center gap-x-2'>
-            <Icons.batteryFull size={30} />
-            <TypographyMuted className='overflow-hidden text-ellipsis text-xs'>
-              하루 종일 쓰고도 밤 늦게까지 너끈한 최대 20시간의 배터리 사용
-              시간각주¹
-            </TypographyMuted>
-          </div>
-          <Separator />
-          <div className='flex items-center gap-x-2'>
-            <Icons.diagonal size={30} />
-            <TypographyMuted className='overflow-hidden text-ellipsis text-xs'>
-              생생한 색상과 놀라운 디테일을 보여주는 500 니트 밝기의 Retina
-              디스플레이
-            </TypographyMuted>
-          </div>
-          <Separator />
-          <div className='flex items-center gap-x-2'>
-            <Icons.plugZap size={30} />
-            <TypographyMuted className='overflow-hidden text-ellipsis text-xs'>
-              고속 액세서리에 연결하고 전원을 공급해주는 Thunderbolt 포트 2개
-            </TypographyMuted>
-          </div>
-          <Separator />
+    // <div className='flex h-[500px] w-full items-center justify-center border-2 bg-gray-600'>
+    //   <motion.div
+    //     onMouseMove={handleMouseMove}
+    //     ref={cardRef}
+    //     className=' h-[80%] w-[80%] border-2 bg-white backdrop-blur-xl'
+    //     style={{ rotateX, rotateY }}
+    //   >
+    //     3D Card
+    //   </motion.div>
+    // </div>
+    <Card
+      className='group relative w-full max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-16 shadow-2xl shadow-gray-900'
+      onMouseMove={handleMouseMove}
+    >
+      <motion.div
+        className='pointer-events-none absolute -inset-px rounded-xl border-2 opacity-0 transition duration-300 group-hover:opacity-100'
+        style={{
+          background: useMotionTemplate`
+          radial-gradient(
+            650px circle at ${mouseX}px ${mouseY}px,
+            rgba(14, 165, 233, 0.15),
+            transparent 90%
+          )
+        `,
+        }}
+      />
+      <CardHeader>
+        <CardTitle className='text-5xl font-bold tracking-tight text-white'>
+          Card
+        </CardTitle>
+        <CardDescription className='text-base font-semibold leading-7 text-sky-500'>
+          Component
+        </CardDescription>
+        <CardContent className='mt-2 flex items-center gap-x-2'>
+          <p className='mt-6 text-base leading-7 text-gray-300'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit, facilis
+            illum eum ullam nostrum atque quam.
+          </p>
         </CardContent>
-        <CardFooter className='flex cursor-pointer select-none items-center  gap-x-1 '>
-          <TypographyMuted className='text-blue-500'>
-            MacBook Pro 13 더 살펴보기
-          </TypographyMuted>
-          <Icons.chevronRight className='text-blue-500' size={15} />
-        </CardFooter>
-      </Card>
+      </CardHeader>
     </Card>
   );
 }
