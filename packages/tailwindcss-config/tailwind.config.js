@@ -77,6 +77,10 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        'fade-in': {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
         // 'unfold-in': {
         //   '0%': {
         //     transform: `scaleX(0) scaleY(0.005)`,
@@ -124,7 +128,7 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.3s ease-out',
         'accordion-up': 'accordion-up 0.3s ease-out',
-        // 'zoom-in': 'zoom-in 0.3s ease-out',
+        'fade-in': 'fade-in 2s ease-out forwards',
       },
     },
   },
