@@ -6,8 +6,8 @@ export const FEEDS: Feeds = {
   KOREAN_FE: 'https://kofearticle.substack.com/feed',
   BBC_FOOTBALL: 'https://feeds.bbci.co.uk/sport/football/rss.xml',
   CSS_TRICS: 'https://css-tricks.com/feed/',
-  // DEV_TO: 'https://dev.to/feed',
-  // TKDODO: 'https://tkdodo.eu/blog/rss.xml', // error ?
+  DEV_TO: 'https://dev.to/feed',
+  TKDODO: 'https://tkdodo.eu/blog/rss.xml', // error ?
 };
 
 export const FEED_URLS = Object.keys(FEEDS).map((key) => FEEDS[key]);

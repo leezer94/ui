@@ -44,6 +44,8 @@ const parseRssFeedArticles = async (url: string): Promise<RssFeedType> => {
 };
 
 export default async function FeedExample() {
+  // allSettled 로 변환
+  // allSettled 로 에러에 대한 페이지도 따로 작성
   const articles = await Promise.all(
     FEED_URLS.map(async (url) => await parseRssFeedArticles(url))
   );
