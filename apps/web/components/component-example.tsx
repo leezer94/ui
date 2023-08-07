@@ -11,6 +11,7 @@ interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   extractedClassNames?: string;
   align?: 'center' | 'start' | 'end';
   src?: string;
+  category?: string;
 }
 
 export function ComponentExample({
@@ -19,6 +20,7 @@ export function ComponentExample({
   extractClassName,
   extractedClassNames,
   align = 'center',
+  category = 'Sample',
   src: _,
   ...props
 }: ComponentExampleProps) {
@@ -49,7 +51,7 @@ export function ComponentExample({
               value='Sample'
               className='relative rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
             >
-              Sample
+              {category}
             </TabsTrigger>
             {/* Code Area */}
             {/* <TabsTrigger
