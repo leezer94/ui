@@ -20,6 +20,7 @@ import { ComponentExample } from '@/components/component-example';
 import { ComponentSource } from '@/components/component-source';
 import { CopyButton, CopyNpmCommandButton } from '@/components/copy-button';
 import { examples } from '@/components/examples';
+import { ComponentMultiExamples } from './component-multi-examples';
 
 const components = {
   Accordion,
@@ -208,6 +209,7 @@ const components = {
   Image,
   Callout,
   ComponentExample,
+  ComponentMultiExamples,
   ComponentSource,
   AspectRatio,
   CodeBlockWrapper: ({ ...props }) => (
