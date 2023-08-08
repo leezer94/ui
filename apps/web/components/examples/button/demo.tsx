@@ -23,17 +23,15 @@ const BUTTON_SIZE = [
 
 export default function ButtonDemo({ buttonVariant }: ButtonProps) {
   return (
-    <div>
-      <div className='flex items-center justify-center gap-x-5'>
-        {BUTTON_SIZE.map((size, idx) => (
-          <div key={`${size}/${idx}`} className=' flex flex-col items-center'>
-            <TypographyMuted className='mb-5'>{size}</TypographyMuted>
-            <Button variant={buttonVariant} size={size}>
-              {buttonVariant}
-            </Button>
-          </div>
-        ))}
-      </div>
+    <div className='flex flex-wrap items-center justify-center gap-x-8 gap-y-5 md:flex-nowrap md:gap-y-0'>
+      {BUTTON_SIZE.map((size, idx) => (
+        <div key={`${size}/${idx}`} className=' flex flex-col items-center'>
+          <TypographyMuted className='mb-5'>{size}</TypographyMuted>
+          <Button variant={buttonVariant} size={size}>
+            {buttonVariant}
+          </Button>
+        </div>
+      ))}
     </div>
   );
 }

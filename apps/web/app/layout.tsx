@@ -60,7 +60,7 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <SiteHeader />
-        <div className='flex-1'>{children}</div>
+        <div className='mb-64 flex-1 md:mb-0'>{children}</div>
         <SiteFooter />
       </body>
     </html>

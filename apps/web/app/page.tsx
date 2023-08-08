@@ -1,4 +1,6 @@
 import FeedExample from '@/app/examples/feed/page';
+import Image from 'next/image';
+import FeedExampleImage from '../public/examples/feed-example.png';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
@@ -42,8 +44,8 @@ export default function Page() {
           </Link>
         </AnimatedWrapper>
       </PageHeader>
-      <section className='hidden md:block'>
-        <AnimatedContainer className='overflow-hidden rounded-lg border bg-background p-5 shadow-xl'>
+      <section className=''>
+        <AnimatedContainer className='overflow-hidden rounded-lg border bg-background shadow-xl'>
           {/* @ts-expect-error Server Component */}
           <FeedExample />
         </AnimatedContainer>

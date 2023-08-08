@@ -21,7 +21,7 @@ interface ExamplesLayoutProps {
 export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
   return (
     <>
-      <div className='container relative pb-10'>
+      <div className='container relative p-1 pb-10 md:p-8'>
         <PageHeader>
           <PageHeaderHeading>
             UI 컴포넌트로 구성된 예시 화면들을 참고하세요.
@@ -51,7 +51,7 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
         </PageHeader>
         <section>
           {/* <ExamplesNav /> */}
-          <div className='overflow-hidden rounded-[0.5rem] border bg-background p-5 shadow-xl'>
+          <div className='overflow-hidden rounded-[0.5rem] border bg-background shadow-xl'>
             {children}
           </div>
         </section>
