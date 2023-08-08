@@ -1,9 +1,12 @@
+//
+
 import Image from 'next/image';
 import FeedExampleImage from '../../../public/examples/feed-example.png';
 import type { Metadata } from 'next/types';
-import type { RssFeedType } from '@/types/rss-feed';
 import axios, { type AxiosResponse } from 'axios';
 import { parseStringPromise } from 'xml2js';
+import type { RssFeedType } from '@/types/rss-feed';
+
 import { URL_REGEX, FEED_URLS } from '@/config/rss-feed';
 import {
   overviewConfig,
@@ -70,12 +73,12 @@ export default async function FeedExample() {
             />
           ))}
         </div>
-        <div className='flex w-full flex-col md:flex-row'>
-          <div className='mt-5 h-full w-8/12'>
+        <div className='flex'>
+          <div className='w-8/12'>
             <UserFeed articles={articles} />
           </div>
-          <div className='grid w-4/12 grid-rows-3 gap-5 p-10'>
-            <Card className='row-span-2 w-full'>
+          <div className='grid w-4/12 grid-rows-3 gap-5 p-5'>
+            <Card className='row-span-2'>
               <CardHeader className='mb-5 flex flex-row items-center justify-between space-y-0 pb-2'>
                 <CardTitle>Todo</CardTitle>
                 <TodoDialog
