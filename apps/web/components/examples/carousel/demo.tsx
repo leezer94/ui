@@ -41,10 +41,6 @@ export default function CarouselDemo() {
         orientation='horizontal'
         autoplay={autoplay}
       >
-        {/* <CarouselItem> */}
-        <IssueTemplateCard />
-        {/* </CarouselItem> */}
-        <AppleTemplateCard />
         {CAROUSEL_IMAGES.map((url, idx) => (
           <div
             className='h-full w-full rounded-lg bg-cover bg-center duration-500'
@@ -52,6 +48,8 @@ export default function CarouselDemo() {
             key={`${url}/${idx}`}
           />
         ))}
+        <IssueTemplateCard />
+        <AppleTemplateCard />
       </Carousel>
     </>
   );
@@ -59,7 +57,7 @@ export default function CarouselDemo() {
 
 function IssueTemplateCard() {
   return (
-    <Card className='h-full overflow-scroll duration-500'>
+    <Card className='hidden h-full overflow-scroll duration-500 md:block'>
       <CardHeader>
         <div className='flex items-baseline justify-between'>
           <CardTitle className='text-xl'>Issue Template</CardTitle>
@@ -146,12 +144,12 @@ function AppleTemplateCard() {
     'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
   ];
   return (
-    <Card className='flex h-full justify-evenly duration-500'>
+    <Card className='h-full w-full justify-evenly duration-500'>
       <div
-        className='h-full w-full flex-1 bg-cover bg-center'
+        className='h-full flex-1 bg-cover bg-center'
         style={{ backgroundImage: `url(${IMAGES[1]})` }}
       ></div>
-      <Card className='flex-1 rounded-none'>
+      <Card className='hidden flex-1 rounded-none md:block'>
         <CardHeader>
           <CardTitle>MacBook Pro 13</CardTitle>
           <div className='flex items-baseline justify-between'>

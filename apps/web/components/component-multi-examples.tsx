@@ -39,7 +39,7 @@ export function ComponentMultiExamples({
     >
       <Tabs defaultValue='default' className='relative mr-auto w-full'>
         <div className='flex items-center justify-between pb-3'>
-          <TabsList className='w-full justify-start rounded-none border-b bg-transparent p-0'>
+          <TabsList className='w-full justify-start overflow-scroll rounded-none border-b bg-transparent p-0 scrollbar-hide'>
             {categories?.map((category, idx) => (
               <TabsTrigger
                 key={`${category}/${idx}`}

@@ -1,5 +1,4 @@
 import { Avatar, AvatarImage, AvatarFallback } from 'ui/components/avatar';
-import { TypographyH4 } from 'ui/components/typography';
 import { cn } from '@/lib';
 
 interface AvatarProps {
@@ -26,14 +25,11 @@ const SAMPLE_AVATAR: AvatarProps[] = [
 
 export default function AvatarDemo() {
   return (
-    <div className='flex w-[50%] items-center justify-center'>
+    <div className='flex w-[50%] flex-col items-center justify-center md:flex-row'>
       {SAMPLE_AVATAR.map(({ src, alt, fallback }, idx) => (
-        <div
-          key={`${alt}/${idx}`}
-          className='flex items-center justify-center gap-10'
-        >
-          <div className='flex h-[180px] w-[180px] flex-col items-center justify-start gap-y-2 font-bold'>
-            <div className={cn('flex flex-1 items-center')}>
+        <div key={`${alt}/${idx}`} className='flex items-center justify-center'>
+          <div className='flex h-[180px] w-[180px] flex-col items-center gap-y-2 font-bold'>
+            <div className={cn('flex flex-1 items-center justify-center')}>
               <Avatar>
                 <AvatarImage src={src} alt={alt} />
                 <AvatarFallback>{fallback}</AvatarFallback>
@@ -43,8 +39,8 @@ export default function AvatarDemo() {
         </div>
       ))}
       <div className='flex items-center justify-center gap-10'>
-        <div className='flex h-[180px] w-[180px] flex-col items-center justify-start gap-y-2 font-bold'>
-          <div className={cn('flex flex-1 items-center')}>
+        <div className='flex h-[180px] w-[180px] flex-col items-center gap-y-2 font-bold'>
+          <div className={cn('flex flex-1 items-center justify-center')}>
             <Avatar>
               <AvatarFallback className='bg-transparent'>LZ</AvatarFallback>
             </Avatar>
