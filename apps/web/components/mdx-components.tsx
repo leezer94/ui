@@ -11,9 +11,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
+} from 'ui/components/accordion';
+import { Alert, AlertDescription, AlertTitle } from 'ui/components/alert';
+import { AspectRatio } from 'ui/components/aspect-ratio';
 import { Callout } from '@/components/callout';
 import { CodeBlockWrapper } from '@/components/code-block-wrapper';
 import { ComponentExample } from '@/components/component-example';

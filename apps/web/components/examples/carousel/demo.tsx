@@ -13,7 +13,7 @@ import {
 import { Carousel } from 'ui/components/carousel';
 import { Separator } from 'ui/components/separator';
 import { Button } from 'ui/components/button';
-import { TypographyH4, TypographyMuted } from '@/components/ui/typography';
+import { TypographyH4, TypographyMuted } from 'ui/components/typography';
 
 const CAROUSEL_IMAGES = [
   'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',

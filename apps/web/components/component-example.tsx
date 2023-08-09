@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 import { cn } from '@/lib';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui/components/tabs';
 import { CopyButton, CopyWithClassNames } from '@/components/copy-button';
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
