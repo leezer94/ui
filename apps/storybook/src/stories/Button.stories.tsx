@@ -1,7 +1,7 @@
 import '../global.css';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from 'ui/components';
+import { Button } from 'ui/components/button';
 import { Icons } from 'ui/icons';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

@@ -1,12 +1,9 @@
-//
-
 import Image from 'next/image';
 import FeedExampleImage from '../../../public/examples/feed-example.png';
 import type { Metadata } from 'next/types';
 import axios, { type AxiosResponse } from 'axios';
 import { parseStringPromise } from 'xml2js';
 import type { RssFeedType } from '@/types/rss-feed';
-
 import { URL_REGEX, FEED_URLS } from '@/config/rss-feed';
 import {
   overviewConfig,

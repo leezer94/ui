@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { cn } from '../lib/utils';
-import { ChevronDownSquare } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -33,7 +33,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       <div className='flex flex-col text-left'>{children}</div>
-      <ChevronDownSquare className='h-4 w-4 transition-transform duration-200' />
+      <ChevronDown className='h-4 w-4 transition-transform duration-200' />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

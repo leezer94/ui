@@ -11,7 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from 'ui/components/dropdown-menu';
 import { Icons } from '@/components/icons';
 
 interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
