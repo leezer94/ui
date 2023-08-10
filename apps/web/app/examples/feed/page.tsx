@@ -79,7 +79,7 @@ export default async function FeedExample() {
               <CardHeader className='mb-5 flex flex-row items-center justify-between space-y-0 pb-2'>
                 <CardTitle>Todo</CardTitle>
                 <TodoDialog
-                  trigger={<Icons.todo className='cursor-pointer' />}
+                  trigger={<Icons.todo className='pointer-events-none' />}
                 />
               </CardHeader>
               <CardContent className='flex flex-col gap-y-5'>

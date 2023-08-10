@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import { Progress } from 'ui/components/progress';
+import { cn } from '@/lib/utils';
 
 interface Props {
+  className?: string;
   percentage: number;
   defaultProgress?: number;
 }
 
 export default function ProgressBar({
+  className,
   percentage,
   defaultProgress = 13,
 }: Props) {
@@ -19,5 +22,5 @@ export default function ProgressBar({
     return () => clearTimeout(timer);
   }, [percentage]);
 
-  return <Progress value={progress} className='w-[100%]' />;
+  return <Progress value={progress} className={cn('w-[100%]', className)} />;
 }

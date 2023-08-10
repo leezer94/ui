@@ -59,6 +59,11 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/dialog',
           items: [],
         },
+        {
+          title: '얼럿 다이얼로그 모달',
+          href: '/docs/components/alert-dialog',
+          items: [],
+        },
       ],
     },
     {

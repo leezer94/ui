@@ -44,10 +44,11 @@ import {
   Square,
   CircleDot,
   Monitor,
-  Battery,
   BatteryFull,
   MoveDiagonal,
+  Trash2,
   PlugZap,
+  PartyPopper,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -75,6 +76,8 @@ export const Icons = {
     </svg>
   ),
   close: X,
+  trash2: Trash2,
+  partyPopper: PartyPopper,
   dot: Dot,
   circle: Circle,
   circleDot: CircleDot,
@@ -97,7 +100,6 @@ export const Icons = {
   chevronDown: ChevronDown,
   checkSquare: CheckSquare,
   square: Square,
-  trash: Trash,
   post: FileText,
   page: File,
   media: Image,
