@@ -4,6 +4,7 @@ import ButtonDemo from './button/demo';
 import CardDemo from './card/demo';
 import CarouselDemo from './carousel/demo';
 import DialogDemo from './dialog/demo';
+import AlertDialogDemo from './alert-dialog/demo';
 
 export const examples = {
   AccordionDemo,
@@ -12,4 +13,5 @@ export const examples = {
   CarouselDemo,
   AvatarDemo,
   DialogDemo,
+  AlertDialogDemo,
 };
