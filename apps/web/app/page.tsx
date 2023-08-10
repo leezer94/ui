@@ -42,7 +42,7 @@ export default function Page() {
           </Link>
         </AnimatedWrapper>
       </PageHeader>
-      <section className=''>
+      <section>
         <AnimatedContainer className='overflow-hidden rounded-lg border bg-background shadow-xl'>
           {/* @ts-expect-error Server Component */}
           <FeedExample />

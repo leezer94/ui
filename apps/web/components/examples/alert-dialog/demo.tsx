@@ -91,7 +91,12 @@ export default function AlertDialogDemo() {
                 </p>
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
-                    <Icons.trash2 className='cursor-pointer items-center justify-center' />
+                    <Icons.trash2
+                      className={cn(
+                        'cursor-pointer items-center justify-center',
+                        `${idx === 0 && 'animate-bounce drop-shadow-2xl'}`
+                      )}
+                    />
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
