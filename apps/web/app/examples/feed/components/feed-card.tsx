@@ -37,7 +37,10 @@ export default function FeedCard({ className, articles, selection }: FeedCard) {
             <FeedDialog
               type='korean-fe'
               trigger={
-                <p className='cursor-pointer py-5 hover:text-red-300'>
+                <p
+                  aria-label='article'
+                  className='cursor-pointer py-5 hover:text-red-300'
+                >
                   {feed.title.replace(TITLE_PREFIX, '')}
                 </p>
               }

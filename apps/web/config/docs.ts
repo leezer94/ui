@@ -34,11 +34,11 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs',
           items: [],
         },
-        {
-          title: '라이브러리에 대해',
-          href: '/docs/about',
-          items: [],
-        },
+        // {
+        //   title: '라이브러리에 대해',
+        //   href: '/docs/about',
+        //   items: [],
+        // },
       ],
     },
     {
@@ -92,6 +92,29 @@ export const DOCS_CONFIG: DocsConfig = {
         {
           title: '피드',
           href: '/examples/feed',
+          items: [],
+        },
+      ],
+    },
+    {
+      title: '레퍼런스',
+      items: [
+        // {
+        //   title: 'Shadcn/ui',
+        //   href: 'https://ui.shadcn.com/',
+        //   external: true,
+        //   items: [],
+        // },
+        {
+          title: 'Radix/ui',
+          href: 'https://www.radix-ui.com/',
+          external: true,
+          items: [],
+        },
+        {
+          title: 'TailwindCSS',
+          href: 'https://tailwindcss.com/',
+          external: true,
           items: [],
         },
       ],

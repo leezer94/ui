@@ -15,7 +15,6 @@ import {
   Overview,
   UserFeed,
   ProgressBar,
-  TodoDialog,
 } from '@/app/examples/feed/components';
 import { Card, CardContent, CardHeader, CardTitle } from 'ui/components/card';
 import { Separator } from 'ui/components/separator';
@@ -78,9 +77,7 @@ export default async function FeedExample() {
             <Card className='row-span-2'>
               <CardHeader className='mb-5 flex flex-row items-center justify-between space-y-0 pb-2'>
                 <CardTitle>Todo</CardTitle>
-                <TodoDialog
-                  trigger={<Icons.todo className='pointer-events-none' />}
-                />
+                <Icons.todo className='pointer-events-none' />
               </CardHeader>
               <CardContent className='flex flex-col gap-y-5'>
                 {todoListConfig.map(({ title, status, dueDate }, idx) => (

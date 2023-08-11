@@ -66,7 +66,8 @@ export default function MainNav() {
         >
           깃허브
         </Link>
-        <a
+        <p
+          role='button'
           className={cn(
             'hidden text-foreground/60 transition-colors lg:block cursor-pointer select-none pointer-events-none'
           )}
@@ -86,7 +87,7 @@ export default function MainNav() {
           >
             EN
           </span>
-        </a>
+        </p>
       </nav>
     </div>
   );

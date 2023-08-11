@@ -99,7 +99,7 @@ export default function SiteHeader() {
                 )}
               >
                 <Icons.storybook className='h-5 w-5 fill-current' />
-                <span className='sr-only'>NPM</span>
+                <span className='sr-only'>Storybook</span>
               </div>
             </Link>
           </nav>
