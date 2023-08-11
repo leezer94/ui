@@ -86,6 +86,7 @@ export default async function Page({ params }: DocPageProps) {
                 href={doc.radix.link}
                 target='_blank'
                 rel='noreferrer'
+                className='underline-offset-8 hover:underline'
                 // className={cn(badgeVariants({ variant: 'secondary' }))}
               >
                 {/* <Icons.radix className='mr-1 h-3 w-3' /> */}
@@ -97,6 +98,7 @@ export default async function Page({ params }: DocPageProps) {
                 href={doc.radix.api}
                 target='_blank'
                 rel='noreferrer'
+                className='underline-offset-8 hover:underline'
                 // className={cn(badgeVariants({ variant: 'secondary' }))}
               >
                 API Reference

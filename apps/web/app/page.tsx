@@ -37,12 +37,12 @@ export default function Page() {
             href={siteConfig.links.github}
             className={cn(buttonVariants({ variant: 'outline' }))}
           >
-            <Icons.gitHub className='mr-2 h-4 w-4' />
+            <Icons.gitHub className='h-4 w-4' />
             깃허브
           </Link>
         </AnimatedWrapper>
       </PageHeader>
-      <section className=''>
+      <section>
         <AnimatedContainer className='overflow-hidden rounded-lg border bg-background shadow-xl'>
           {/* @ts-expect-error Server Component */}
           <FeedExample />

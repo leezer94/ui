@@ -41,13 +41,13 @@ export const weatherConfig = [
   {
     title: 'Weather',
     description: 'Regensburg',
-    icon: <Icons.globe />,
+    icon: <Icons.globe className='hidden lg:block' />,
     amount: WEATHERS[RANDOM_INDEX].icon,
   },
   {
     title: 'Temperature',
     description: 'Seoul',
-    icon: <Icons.temperature />,
+    icon: <Icons.temperature className='hidden lg:block' />,
     amount: `24 °C`,
   },
 ];

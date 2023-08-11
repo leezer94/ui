@@ -30,7 +30,7 @@ export default function MainNav() {
         <Link
           href='/docs'
           className={cn(
-            'transition-colors hover:text-foreground/80 line-through pointer-events-none',
+            'transition-colors hover:text-foreground/80',
             pathname === '/docs' ? 'text-foreground' : 'text-foreground/60'
           )}
         >

@@ -48,7 +48,7 @@ export default function SiteHeader() {
                 )}
               >
                 <Icons.linkedIn className='h-5 w-5 fill-current' />
-                <span className='sr-only'>Twitter</span>
+                <span className='sr-only'>LinkedIn</span>
               </div>
             </Link>
             <Link
@@ -67,6 +67,39 @@ export default function SiteHeader() {
               >
                 <Icons.medium className='h-5 w-5 fill-current' />
                 <span className='sr-only'>Medium</span>
+              </div>
+            </Link>
+            <Link href={siteConfig.links.npm} target='_blank' rel='noreferrer'>
+              <div
+                className={cn(
+                  buttonVariants({
+                    size: 'sm',
+                    variant: 'ghost',
+                  }),
+                  'w-9 px-0 '
+                )}
+              >
+                <Icons.npm className='h-5 w-5 fill-current' />
+                <span className='sr-only'>NPM</span>
+              </div>
+            </Link>
+            <Link
+              href={siteConfig.links.storybook}
+              target='_blank'
+              rel='noreferrer'
+              className='pointer-events-none'
+            >
+              <div
+                className={cn(
+                  buttonVariants({
+                    size: 'sm',
+                    variant: 'ghost',
+                  }),
+                  'w-9 px-0'
+                )}
+              >
+                <Icons.storybook className='h-5 w-5 fill-current' />
+                <span className='sr-only'>NPM</span>
               </div>
             </Link>
           </nav>

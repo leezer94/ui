@@ -85,6 +85,10 @@ module.exports = {
           from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
           to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
         },
+        bounce: {
+          from: { transform: 'translateY(-25%) scale(1)' },
+          to: { transform: 'translateY(0%) scale(1.3)' },
+        },
 
         // 'unfold-in': {
         //   '0%': {
@@ -135,7 +139,8 @@ module.exports = {
         'accordion-up': 'accordion-up 0.3s ease-out',
         'fade-in': 'fade-in 2s ease-out forwards',
         'overlay-show': 'fade-in 150ms cubic-bezier(0.16, 1, 0.3, 1)',
-        'content-show': 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        'content-show': 'content-show 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        bounce: 'bounce 700ms ease-out infinite',
       },
     },
   },
