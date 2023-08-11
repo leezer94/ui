@@ -11,9 +11,18 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  AccordionDescription,
 } from 'ui/components/accordion';
 import { Alert, AlertDescription, AlertTitle } from 'ui/components/alert';
 import { AspectRatio } from 'ui/components/aspect-ratio';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from 'ui/components/card';
 import { Callout } from '@/components/callout';
 import { CodeBlockWrapper } from '@/components/code-block-wrapper';
 import { ComponentExample } from '@/components/component-example';
@@ -21,12 +30,21 @@ import { ComponentSource } from '@/components/component-source';
 import { CopyButton, CopyNpmCommandButton } from '@/components/copy-button';
 import { examples } from '@/components/examples';
 import { ComponentMultiExamples } from './component-multi-examples';
+import ProgressBar from '../app/examples/feed/components/progress-bar';
 
 const components = {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  ProgressBar,
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  AccordionDescription,
   Alert,
   AlertTitle,
   AlertDescription,
@@ -200,7 +218,7 @@ const components = {
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
-        'relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm',
+        'relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm bg-transparent',
         className
       )}
       {...props}
@@ -232,7 +250,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <div className='mdx'>
+    <div className='mdx mt-8'>
       <Component components={components} />
     </div>
   );
