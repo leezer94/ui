@@ -27,6 +27,21 @@ export const DOCS_CONFIG: DocsConfig = {
   ],
   SIDE_NAV: [
     {
+      title: '시작하기',
+      items: [
+        {
+          title: '소개',
+          href: '/docs',
+          items: [],
+        },
+        {
+          title: '라이브러리에 대해',
+          href: '/docs/about',
+          items: [],
+        },
+      ],
+    },
+    {
       title: '컴포넌트',
       items: [
         {
