@@ -22,5 +22,11 @@ export default function ProgressBar({
     return () => clearTimeout(timer);
   }, [percentage]);
 
-  return <Progress value={progress} className={cn('w-[100%]', className)} />;
+  return (
+    <Progress
+      aria-label='progress-bar'
+      value={progress}
+      className={cn('w-[100%]', className)}
+    />
+  );
 }

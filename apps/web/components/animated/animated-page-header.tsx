@@ -29,7 +29,7 @@ function AnimatedPageDescription({
   ...props
 }: React.ComponentPropsWithoutRef<typeof motion.h4>) {
   return (
-    <motion.h4
+    <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 100 }}
       transition={{ ease: 'easeIn', delay: 1, duration: 0.5 }}

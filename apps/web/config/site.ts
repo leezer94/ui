@@ -9,7 +9,7 @@ export const siteConfig = {
     medium: 'https://medium.com/@2kunhee94',
     reference: 'https://github.com/shadcn/ui',
     npm: 'https://www.npmjs.com/package/leezer-ui',
-    storybook: '',
+    storybook: 'https://www.leezer-ui.com',
   },
 };
 

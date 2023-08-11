@@ -87,9 +87,7 @@ export default async function Page({ params }: DocPageProps) {
                 target='_blank'
                 rel='noreferrer'
                 className='underline-offset-8 hover:underline'
-                // className={cn(badgeVariants({ variant: 'secondary' }))}
               >
-                {/* <Icons.radix className='mr-1 h-3 w-3' /> */}
                 Radix UI
               </Link>
             )}
@@ -99,16 +97,13 @@ export default async function Page({ params }: DocPageProps) {
                 target='_blank'
                 rel='noreferrer'
                 className='underline-offset-8 hover:underline'
-                // className={cn(badgeVariants({ variant: 'secondary' }))}
               >
                 API Reference
               </Link>
             )}
           </div>
         ) : null}
-        {/* <Separator className='my-4 md:my-6' /> */}
         <Mdx code={doc.body.code} />
-        {/* <Separator className='my-4 md:my-6' /> */}
         {/* <DocsPager doc={doc} /> */}
       </div>
       <div className='hidden text-sm xl:block'>

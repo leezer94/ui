@@ -26,7 +26,11 @@ export default function ArticleSelection({
       <SelectContent>
         <SelectGroup>
           {articles.map(({ title }, idx) => (
-            <SelectItem key={`${title}/${idx}`} value={title}>
+            <SelectItem
+              aria-label='title'
+              key={`${title}/${idx}`}
+              value={title}
+            >
               {title}
             </SelectItem>
           ))}
