@@ -8,6 +8,8 @@ export const siteConfig = {
     github: 'https://github.com/leezer94/ui',
     medium: 'https://medium.com/@2kunhee94',
     reference: 'https://github.com/shadcn/ui',
+    npm: 'https://www.npmjs.com/package/leezer-ui',
+    storybook: '',
   },
 };
 

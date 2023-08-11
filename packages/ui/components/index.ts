@@ -13,3 +13,5 @@ export * from './separator';
 export * from './carousel';
 export * from './avatar';
 export * from './typography';
+export * from './alert-dialog';
+export * from './hover-card';

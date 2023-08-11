@@ -20,6 +20,37 @@ import { Icons } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import ProgressBar from '../../../app/examples/feed/components/progress-bar';
 
+const MEETUPS = [
+  {
+    id: 1,
+    name: 'Football',
+    status: '2 Spots Left',
+    level: 'A',
+    nickname: 'FB',
+  },
+  {
+    id: 2,
+    name: 'BasketBall',
+    status: 'Filled',
+    level: 'B',
+    nickname: 'BB',
+  },
+  {
+    id: 3,
+    name: 'History',
+    status: '1 Spot Left',
+    level: 'A',
+    nickname: 'HS',
+  },
+  {
+    id: 4,
+    name: 'English',
+    status: '10 Spots Left',
+    level: 'C',
+    nickname: 'EN',
+  },
+];
+
 export default function AlertDialogDemo() {
   const [todoList, setTodoList] = useState([...todoListConfig]);
   const percentage = 100 - 25 * todoList.length;
@@ -34,6 +65,8 @@ export default function AlertDialogDemo() {
     },
     [todoList]
   );
+
+  const handleResetTodo = useCallback(() => setTodoList(todoListConfig), []);
 
   return (
     <Card className='row-span-2 h-full w-full min-w-[300px] border-none shadow-xl'>
@@ -54,10 +87,17 @@ export default function AlertDialogDemo() {
       </CardHeader>
       <CardContent className='flex flex-col gap-y-5'>
         {todoList.length === 0 && (
-          <div className='flex justify-center gap-4'>
-            <Icons.partyPopper />
-            <TypographyH4>Todo Completed !!</TypographyH4>
-            <Icons.partyPopper />
+          <div className='flex justify-center'>
+            <Button
+              className='gap-4 text-lg'
+              variant='ghost'
+              size='md'
+              onClick={handleResetTodo}
+            >
+              <Icons.partyPopper className='mr-2 h-4 w-4' />
+              No more todos left
+              <Icons.partyPopper className='mr-2 h-4 w-4' />
+            </Button>
           </div>
         )}
         {todoList.map(({ title, status, dueDate, id }, idx) => (
