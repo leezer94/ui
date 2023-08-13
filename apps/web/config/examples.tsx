@@ -91,7 +91,7 @@ export const membersConfig = [
     fallback: 'KH',
     activity: {
       action: 'Updated client details for issue #7',
-      activeAt: '11:34 am',
+      activeAt: '10:12 am',
     },
   },
   {
@@ -111,7 +111,7 @@ export const membersConfig = [
     fallback: 'YK',
     activity: {
       action: 'Responded to your comment #7514',
-      activeAt: '11:34 am',
+      activeAt: '13:04 pm',
     },
   },
   {
@@ -119,7 +119,7 @@ export const membersConfig = [
     name: 'Taekyung',
     email: 'taekyung@example.com',
     fallback: 'TS',
-    activity: { action: 'Created a new issue', activeAt: '11:34 am' },
+    activity: { action: 'Created a new issue', activeAt: '15:14 pm' },
   },
   {
     src: 'https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?&w=150&h=150&dpr=2&q=70&crop=focalpoint&fp-x=0.48&fp-y=0.35&fp-z=2&fit=crop',
@@ -128,7 +128,7 @@ export const membersConfig = [
     fallback: 'YA',
     activity: {
       action: 'Approved pull request #361',
-      activeAt: '11:34 am',
+      activeAt: '20:50 pm',
     },
   },
   {
@@ -136,7 +136,7 @@ export const membersConfig = [
     name: 'SeHee',
     email: 'shinsehantan@example.com',
     fallback: 'SS',
-    activity: { action: 'Joined the team', activeAt: '11:34 am' },
+    activity: { action: 'Joined the team', activeAt: '21:00 pm' },
   },
 ];
 
