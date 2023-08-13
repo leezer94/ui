@@ -12,7 +12,6 @@ import {
 } from '@/components/animated/animated-page-header';
 import LandingPage from '@/app/examples/members/page';
 
-
 export default function Page() {
   return (
     <div className='container relative pb-10'>
