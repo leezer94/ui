@@ -11,6 +11,7 @@ import {
   AnimatedPageHeading,
   AnimatedWrapper,
 } from '@/components/animated/animated-page-header';
+import LandingPage from '@/app/examples/landing/page';
 
 export default function Page() {
   return (
@@ -44,6 +45,7 @@ export default function Page() {
         <AnimatedContainer className='overflow-hidden rounded-lg border bg-background shadow-xl'>
           {/* @ts-expect-error Server Component */}
           <FeedExample />
+          <LandingPage />
         </AnimatedContainer>
       </section>
     </div>
