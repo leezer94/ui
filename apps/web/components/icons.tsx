@@ -1,6 +1,7 @@
 import {
   AlertTriangle,
   ArrowRight,
+  MoreHorizontal,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -77,6 +78,7 @@ export const Icons = {
   ),
   close: X,
   trash2: Trash2,
+  ellipsisHorizontal: MoreHorizontal,
   partyPopper: PartyPopper,
   dot: Dot,
   circle: Circle,
