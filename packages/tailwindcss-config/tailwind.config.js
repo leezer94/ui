@@ -85,54 +85,26 @@ module.exports = {
           from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
           to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
         },
+        'slide-up-fade': {
+          '0%': { opacity: 0, transform: 'translateY(2px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        'slide-right-fade': {
+          '0%': { opacity: 0, transform: 'translateX(-2px)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+        'slide-down-fade': {
+          '0%': { opacity: 0, transform: 'translateY(-2px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        'slide-left-fade': {
+          '0%': { opacity: 0, transform: 'translateX(2px)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
         bounce: {
           from: { transform: 'translateY(-25%) scale(1)' },
           to: { transform: 'translateY(0%) scale(1.3)' },
         },
-
-        // 'unfold-in': {
-        //   '0%': {
-        //     transform: `scaleX(0) scaleY(0.005)`,
-        //   },
-        //   '50%': {
-        //     /* 0.5 초간 세로 크기는 작은상태로 가로 너비만 확대  */
-        //     transform: `scaleX(1) scaleY(0.005)`,
-        //   },
-        //   '100%': {
-        //     /* 0.5 초간 세로 크기를 확대 */
-        //     transform: `scaleY(1) scaleX(1)`,
-        //   },
-        // },
-        // /* Show modal content  */
-        // 'zoom-in': {
-        //   from: {
-        //     transform: `scale(0)`,
-        //   },
-        //   to: {
-        //     transform: `scale(1)`,
-        //   },
-        // },
-        // /* Hide modal content */
-        // 'zoom-out': {
-        //   from: {
-        //     transform: `scale(1)`,
-        //   },
-        //   to: {
-        //     transform: `scale(0)`,
-        //   },
-        // },
-        // /* Dimmed hiding */
-        // 'unfold-out': {
-        //   '0%': {
-        //     transform: `scale(1)`,
-        //   },
-        //   '50%': {
-        //     transform: `scaleX(1) scaleY(0.005)`,
-        //   },
-        //   '100%': {
-        //     transform: `scaleX(0) scaleY(0.005)`,
-        //   },
-        // },
       },
       animation: {
         'accordion-down': 'accordion-down 0.3s ease-out',
@@ -140,6 +112,13 @@ module.exports = {
         'fade-in': 'fade-in 2s ease-out forwards',
         'overlay-show': 'fade-in 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         'content-show': 'content-show 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-up-fade': 'slide-up-fade 300ms cubic-bezier(0.16, 0, 0.13, 1)',
+        'slide-down-fade':
+          'slide-down-fade 300ms cubic-bezier(0.16, 0, 0.13, 1)',
+        'slide-right-fade':
+          'slide-right-fade 300ms cubic-bezier(0.16, 0, 0.13, 1)',
+        'slide-left-fade':
+          'slide-left-fade 300ms cubic-bezier(0.16, 0, 0.13, 1)',
         bounce: 'bounce 700ms ease-out infinite',
       },
     },
