@@ -16,7 +16,7 @@ const HoverCardArrow = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <HoverCardPrimitive.Arrow
     ref={ref}
-    className={cn('mt-2 fill-white', className)}
+    className={cn('fill-transparent', className)}
     {...props}
   />
 ));
@@ -30,15 +30,69 @@ const HoverCardContent = React.forwardRef<
   <HoverCardPortal>
     <HoverCardPrimitive.Content
       ref={ref}
-      className={cn('', className)}
+      className={cn(
+        'flex flex-col border w-[300px] rounded-md shadow-lg bg-white p-3 data-[side=bottom]:animate-slide-up-fade data-[side=right]:animate-slide-left-fade data-[side=left]:animate-slide-right-fade data-[side=top]:animate-slide-down-fade',
+        className
+      )}
       {...props}
     >
       {children}
-      <HoverCardArrow className='' />
+      <HoverCardArrow />
     </HoverCardPrimitive.Content>
   </HoverCardPortal>
 ));
 
 HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;
 
-export { HoverCard, HoverCardTrigger, HoverCardContent, HoverCardArrow };
+const HoverCardHeader = ({
+  className,
+  ...props
+}: React.HtmlHTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn('w-full justify-start flex flex-col pb-2', className)}
+    {...props}
+  />
+);
+
+HoverCardHeader.displayName = 'HoverCardHeader';
+
+const HoverCardTitle = ({
+  className,
+  ...props
+}: React.HtmlHTMLAttributes<HTMLHeadingElement>) => (
+  <h1 className={cn('text-md font-md', className)} {...props} />
+);
+
+HoverCardTitle.displayName = 'HoverCardTitle';
+
+const HoverCardDescription = ({
+  className,
+  ...props
+}: React.HtmlHTMLAttributes<HTMLParagraphElement>) => (
+  <p
+    className={cn('text-sm font-md text-foreground/60', className)}
+    {...props}
+  />
+);
+
+HoverCardDescription.displayName = 'HoverCardDescription';
+
+const HoverCardFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn('flex flex-reverse justify-end', className)} {...props} />
+);
+
+HoverCardFooter.displayName = 'HoverCardFooter';
+
+export {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+  HoverCardArrow,
+  HoverCardHeader,
+  HoverCardTitle,
+  HoverCardDescription,
+  HoverCardFooter,
+};

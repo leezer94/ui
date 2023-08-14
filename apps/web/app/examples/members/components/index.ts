@@ -1,2 +1,2 @@
 export { default as ManageMember } from './manage-member';
-export { default as ManageTax } from './manage-tax';
+export { default as HireMember } from './hire-member';

@@ -79,11 +79,11 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/alert-dialog',
           items: [],
         },
-        // {
-        //   title: '카드 호버',
-        //   href: '/docs/components/hover-card',
-        //   items: [],
-        // },
+        {
+          title: '카드 호버',
+          href: '/docs/components/hover-card',
+          items: [],
+        },
       ],
     },
     {
