@@ -99,6 +99,11 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/examples/feed',
           items: [],
         },
+        {
+          title: '멤버',
+          href: '/examples/members',
+          items: [],
+        },
       ],
     },
     {

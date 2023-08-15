@@ -24,7 +24,11 @@ export default function OurCulture() {
               우리의 개발 문화에 대해 이야기 합니다.
             </AccordionDescription>
           </AccordionTrigger>
-          <AccordionContent>애자일한 개발방싱을 지향해요 !</AccordionContent>
+          <AccordionContent>
+            나도, 나의 조직도 애자일하게 일해보고 싶을 때 무엇부터 시작을 해볼
+            수 있을지, 어떤 변화를 지향해야 할지를 실제 사례에 기반한 지식과
+            방법을 공유합니다.
+          </AccordionContent>
         </AccordionItem>
         <AccordionItem value='item-2'>
           <AccordionTrigger>
@@ -42,7 +46,12 @@ export default function OurCulture() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value='item-4'>
-          <AccordionTrigger>업무는 어떻게 진행되나요 ?</AccordionTrigger>
+          <AccordionTrigger>
+            업무는 어떻게 진행되나요 ?
+            <AccordionDescription>
+              직무에 따른 업무에 대해 이야기 합니다.
+            </AccordionDescription>
+          </AccordionTrigger>
           <AccordionContent>
             다양한 팀과 협업하여 제품 개발과정에서 의사소통을 원활하게 합니다.
             엔지니어, SW개발자, 제품 디자이너 등과 함께 일하며 목표를

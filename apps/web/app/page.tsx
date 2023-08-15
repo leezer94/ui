@@ -1,4 +1,3 @@
-import FeedExample from '@/app/examples/feed/page';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
@@ -11,6 +10,7 @@ import {
   AnimatedPageHeading,
   AnimatedWrapper,
 } from '@/components/animated/animated-page-header';
+import LandingPage from '@/app/examples/members/page';
 
 export default function Page() {
   return (
@@ -42,9 +42,7 @@ export default function Page() {
       </PageHeader>
       <section>
         <AnimatedContainer className='overflow-hidden rounded-lg border bg-background shadow-xl'>
-          {/* @ts-expect-error Server Component */}
-          <FeedExample />
-          {/* <LandingPage /> */}
+          <LandingPage />
         </AnimatedContainer>
       </section>
     </div>
