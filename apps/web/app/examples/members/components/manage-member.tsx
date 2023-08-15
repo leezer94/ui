@@ -13,7 +13,7 @@ import { membersConfig } from '@/config/examples';
 
 export default function ManageMember() {
   return (
-    <Card className='w-4/12 p-2'>
+    <Card className='h-[60%] w-full p-2'>
       <CardHeader>
         <div className='mb-5 flex flex-col gap-y-2'>
           <CardTitle>현재 운용가능 인원</CardTitle>
@@ -42,7 +42,7 @@ export default function ManageMember() {
               <AvatarImage src={src} />
               <AvatarFallback>{fallback}</AvatarFallback>
             </Avatar>
-            <TypographyMuted className='hidden w-[15%] max-w-[15%] text-center text-orange-500 md:flex'>
+            <TypographyMuted className='hidden w-[15%] max-w-[15%] text-ellipsis text-center text-orange-500 md:flex'>
               {name}
             </TypographyMuted>
             <TypographyMuted className='hidden flex-1 px-2 text-start md:flex'>
