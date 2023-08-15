@@ -11,18 +11,18 @@ import { Avatar, AvatarFallback, AvatarImage } from 'ui/components/avatar';
 import { membersConfig } from '@/config/examples';
 import { TypographyMuted } from 'ui/components/typography';
 import { cn } from '@/lib/utils';
-import useRenderInterval from '../hooks/useRenderInterval';
+import useRenderInterval from '../../hooks/useRenderInterval';
 
 export default function RecentActivity() {
   const count = useRenderInterval({ membersConfig, renderInterval: 1200 });
 
   return (
-    <Card className='h-full min-h-[450px] w-full border-2'>
+    <Card className='h-full min-h-[450px] w-full border-0'>
       <CardHeader>
         <CardTitle>최근 활동한 멤버</CardTitle>
         <CardDescription>최근 활동한 멤버들을 확인하세요.</CardDescription>
       </CardHeader>
-      <CardContent className='flex w-full flex-col-reverse gap-y-2'>
+      <CardContent className='flex w-full flex-col gap-y-2'>
         {membersConfig.map(({ src, name, fallback, activity }, idx) => (
           <Card
             className={cn(
