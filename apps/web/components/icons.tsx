@@ -50,6 +50,8 @@ import {
   Trash2,
   PlugZap,
   PartyPopper,
+  Send,
+  Link,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -78,6 +80,7 @@ export const Icons = {
   ),
   close: X,
   trash2: Trash2,
+  link: Link,
   ellipsisHorizontal: MoreHorizontal,
   partyPopper: PartyPopper,
   dot: Dot,
@@ -98,6 +101,7 @@ export const Icons = {
   alarm: AlarmCheck,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
+  send: Send,
   chevronRight: ChevronRight,
   chevronDown: ChevronDown,
   checkSquare: CheckSquare,

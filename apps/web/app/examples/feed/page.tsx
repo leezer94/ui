@@ -21,7 +21,7 @@ import { Separator } from 'ui/components/separator';
 import { cn } from '@/lib';
 
 export const metadata: Metadata = {
-  title: 'News Feed',
+  title: 'News Feed | Leezer-UI',
   description: 'Example News Feed app using the components.',
 };
 
