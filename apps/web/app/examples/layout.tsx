@@ -8,6 +8,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '@/components/page-header';
+import { ExamplesNav } from '@/components/examples-nav';
 
 export const metadata: Metadata = {
   title: 'Examples',
@@ -50,7 +51,7 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
           </section>
         </PageHeader>
         <section>
-          {/* <ExamplesNav /> */}
+          <ExamplesNav />
           <div className='overflow-hidden rounded-[0.5rem] border bg-background shadow-xl'>
             {children}
           </div>

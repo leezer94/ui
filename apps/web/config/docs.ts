@@ -79,9 +79,14 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/alert-dialog',
           items: [],
         },
+        {
+          title: '카드 호버',
+          href: '/docs/components/hover-card',
+          items: [],
+        },
         // {
-        //   title: '카드 호버',
-        //   href: '/docs/components/hover-card',
+        //   title: '폼',
+        //   href: '/docs/components/form',
         //   items: [],
         // },
       ],
@@ -92,6 +97,11 @@ export const DOCS_CONFIG: DocsConfig = {
         {
           title: '피드',
           href: '/examples/feed',
+          items: [],
+        },
+        {
+          title: '멤버',
+          href: '/examples/members',
           items: [],
         },
       ],
