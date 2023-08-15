@@ -1,5 +1,6 @@
 import { ManageMember, HireMember } from '@/app/examples/members/components';
 import { OurCulture } from '@/app/examples/members/components/features';
+import type { Metadata } from 'next/types';
 
 export const metadata: Metadata = {
   title: 'Members | Leezer-UI',
