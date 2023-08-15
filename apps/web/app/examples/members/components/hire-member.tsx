@@ -32,7 +32,7 @@ export default function HireMember() {
   );
 
   return (
-    <Card className='z-50 p-2'>
+    <Card className='p-2'>
       <CardHeader>
         <CardTitle className='flex items-center justify-center text-xl'>
           <Avatar className='mr-2'>
