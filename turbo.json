@@ -12,11 +12,11 @@
       ]
     },
     "lint": {
-      "cache": false,
+      "cache": true,
       "outputs": []
     },
     "dev": {
-      "cache": false,
+      "cache": true,
       "persistent": true
     }
   }

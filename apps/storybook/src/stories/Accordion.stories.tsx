@@ -17,10 +17,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    children: {
-      description: 'Overwritten description',
-      options: ['default', 'ghost'],
-    },
+    children: {},
   },
 } satisfies Meta<typeof Accordion>;
 
