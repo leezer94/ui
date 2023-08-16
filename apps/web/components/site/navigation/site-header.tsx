@@ -76,7 +76,7 @@ export default function SiteHeader() {
                     size: 'sm',
                     variant: 'ghost',
                   }),
-                  'w-9 px-0 '
+                  'w-9 px-0 hidden md:block'
                 )}
               >
                 <Icons.npm className='h-5 w-5 fill-current' />
@@ -95,7 +95,7 @@ export default function SiteHeader() {
                     size: 'sm',
                     variant: 'ghost',
                   }),
-                  'w-9 px-0'
+                  'w-9 px-0 hidden md:block'
                 )}
               >
                 <Icons.storybook className='h-5 w-5 fill-current' />

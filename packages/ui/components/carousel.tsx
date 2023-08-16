@@ -5,7 +5,7 @@ import { Icons } from '../icons';
 import { cn } from '../lib/utils';
 import { useEffect } from 'react';
 
-interface CarouselProps {
+export interface CarouselProps {
   buttonColor: 'black' | 'white';
   indicator: boolean;
   orientation: 'vertical' | 'horizontal';
@@ -28,10 +28,10 @@ const Carousel = React.forwardRef<
   (
     {
       className,
-      buttonColor = 'black',
+      buttonColor = 'white',
       indicator = true,
       autoplay = false,
-      orientation = 'vertical',
+      orientation = 'horizontal',
       autoplayInterval = 3000,
       children,
       ...props
@@ -165,28 +165,26 @@ const CarouselButton = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        'absolute left-0 top-[50%] hidden translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-transparent p-2 text-2xl group-hover:block',
-        `${`text-${color}`}`
+        'absolute left-0 top-[50%] hidden translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-transparent p-2 text-2xl group-hover:block'
       )}
       onKeyDown={keyPrev}
       onClick={prev}
       tabIndex={0}
       {...props}
     >
-      <Icons.chevronLeft />
+      <Icons.chevronLeft className={cn(`text-${color}`)} />
     </button>
   ) : (
     <button
       className={cn(
-        'absolute right-0 top-[50%] hidden translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-transparent p-2 text-2xl group-hover:block',
-        `${`text-${color}`}`
+        'absolute right-0 top-[50%] hidden translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-transparent p-2 text-2xl group-hover:block'
       )}
       onKeyDown={keyNext}
       onClick={next}
       tabIndex={0}
       {...props}
     >
-      <Icons.chevronRight />
+      <Icons.chevronRight className={cn(`text-${color}`)} />
     </button>
   )
 );
