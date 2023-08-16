@@ -1,6 +1,6 @@
 import '../global.css';
-import type { Meta } from '@storybook/react';
-import { Carousel, type CarouselProps } from 'ui/components/carousel';
+import type { Meta, StoryFn } from '@storybook/react';
+import { Carousel } from 'ui/components/carousel';
 import {
   AppleTemplateCard,
   IssueTemplateCard,
@@ -48,7 +48,9 @@ const CAROUSEL_IMAGES = [
   'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
 ];
 
-const Template = (args: CarouselProps) => (
+type Story = StoryFn<typeof Carousel>;
+
+const Template: Story = (args) => (
   <div className='w-[500px] h-[500px]'>
     <Carousel {...args}>
       {CAROUSEL_IMAGES.map((url, idx) => (
