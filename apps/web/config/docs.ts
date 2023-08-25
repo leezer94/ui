@@ -109,12 +109,6 @@ export const DOCS_CONFIG: DocsConfig = {
     {
       title: '레퍼런스',
       items: [
-        // {
-        //   title: 'Shadcn/ui',
-        //   href: 'https://ui.shadcn.com/',
-        //   external: true,
-        //   items: [],
-        // },
         {
           title: 'Radix/ui',
           href: 'https://www.radix-ui.com/',

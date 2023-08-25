@@ -12,3 +12,19 @@ radix:
     <HoverCardDemo />
   </div>
 </ComponentExample>
+
+### 컴포넌트 구조
+
+```jsx
+<HoverCard openDelay={300} closeDelay={300}>
+  <HoverCardTrigger>호버카드 트리거가될 컴포넌트</HoverCardTrigger>
+  <HoverCardContent>
+    <HoverCardHeader>
+      <HoverCardTitle>Title</HoverCardTitle>
+      <HoverCardDescription>Description</HoverCardDescription>
+    </HoverCardHeader>
+    Content
+    <HoverCardFooter>Footer</HoverCardFooter>
+  </HoverCardContent>
+</HoverCard>
+```
