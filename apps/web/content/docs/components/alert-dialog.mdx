@@ -12,3 +12,21 @@ radix:
     <AlertDialogDemo />
   </div>
 </ComponentExample>
+
+### 컴포넌트의 구조
+
+```jsx
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Icons.trash2 />
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Title</AlertDialogTitle>
+      <AlertDialogDescription>Description</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogCancel>Cancel</AlertDialogCancel>
+    <AlertDialogAction>Succeed Action</AlertDialogAction>
+  </AlertDialogContent>
+</AlertDialog>
+```

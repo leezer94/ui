@@ -12,3 +12,19 @@ radix:
     <DialogDemo />
   </div>
 </ComponentExample>
+
+### 컴포넌트의 구조
+
+```jsx
+<Dialog>
+  <DialogTrigger asChild>트리거로 사용될 컴포넌트</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Title</DialogTitle>
+      <DialogDescription>Description</DialogDescription>
+    </DialogHeader>
+    {/** 컨텐츠 역할의 컴포넌트 자리  */}
+    <DialogFooter className='mt-5 flex'>Footer</DialogFooter>
+  </DialogContent>
+</Dialog>
+```
