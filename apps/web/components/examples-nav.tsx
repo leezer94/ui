@@ -73,8 +73,8 @@ export function ExampleCodeLink({ pathname }: ExampleCodeLinkProps) {
       rel='nofollow'
       className='absolute right-0 top-0 hidden items-center rounded-[0.5rem] text-sm font-semibold hover:underline md:flex'
     >
-      Source Code
-      <Icons.link className='ml-1 h-4 w-4' />
+      source code
+      <Icons.link className='ml-2 h-4 w-4' />
     </Link>
   );
 }
