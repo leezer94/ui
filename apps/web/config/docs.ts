@@ -84,11 +84,16 @@ export const DOCS_CONFIG: DocsConfig = {
           href: '/docs/components/hover-card',
           items: [],
         },
-        // {
-        //   title: '폼',
-        //   href: '/docs/components/form',
-        //   items: [],
-        // },
+        {
+          title: '폼',
+          href: '/docs/components/form',
+          items: [],
+        },
+        {
+          title: '체크박스',
+          href: '/docs/components/checkbox',
+          items: [],
+        },
       ],
     },
     {

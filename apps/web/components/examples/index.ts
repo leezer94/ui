@@ -6,6 +6,8 @@ import CarouselDemo from './carousel/demo';
 import DialogDemo from './dialog/demo';
 import AlertDialogDemo from './alert-dialog/demo';
 import HoverCardDemo from './hover-card/demo';
+import FormDemo from './form/demo';
+import CheckboxDemo from '@/components/examples/checkbox/demo';
 
 export const examples = {
   AccordionDemo,
@@ -16,4 +18,6 @@ export const examples = {
   DialogDemo,
   AlertDialogDemo,
   HoverCardDemo,
+  FormDemo,
+  CheckboxDemo,
 };
