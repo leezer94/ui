@@ -15,3 +15,4 @@ export * from './avatar';
 export * from './typography';
 export * from './alert-dialog';
 export * from './hover-card';
+export * from './checkbox';
