@@ -14,3 +14,17 @@ radix:
 </ComponentExample>
 
 ### 컴포넌트의 구조
+
+```tsx
+<form>
+  <Checkbox id='terms-and-conditions'>
+    <CheckboxIndicator icon={<CheckIcon className='p-1' />} />
+  </Checkbox>
+  <label
+    className='select-none pl-[15px] text-[15px] leading-none text-black'
+    htmlFor='terms-and-conditions'
+  >
+    회원가입 개인정보 수집 및 이용 동의
+  </label>
+</form>
+```
