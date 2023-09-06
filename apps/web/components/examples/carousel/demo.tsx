@@ -9,11 +9,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from 'ui/components/card';
-import { Carousel } from 'ui/components/carousel';
-import { Separator } from 'ui/components/separator';
-import { Button } from 'ui/components/button';
-import { TypographyH4, TypographyMuted } from 'ui/components/typography';
+} from 'ui/src/components/card';
+import { Carousel } from 'ui/src/components/carousel';
+import { Separator } from 'ui/src/components/separator';
+import { Button } from 'ui/src/components/button';
+import { TypographyH4, TypographyMuted } from 'ui/src/components/typography';
 
 const CAROUSEL_IMAGES = [
   'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',

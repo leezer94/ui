@@ -1,7 +1,7 @@
 import '../global.css';
 import type { Meta } from '@storybook/react';
 
-import { Button } from 'ui/components/button';
+import { Button } from 'ui/src/components/button';
 import {
   Dialog,
   DialogTrigger,
@@ -10,8 +10,8 @@ import {
   DialogDescription,
   DialogTitle,
   DialogFooter,
-} from 'ui/components/dialog';
-import { TypographyMuted } from 'ui/components/typography';
+} from 'ui/src/components/dialog';
+import { TypographyMuted } from 'ui/src/components/typography';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

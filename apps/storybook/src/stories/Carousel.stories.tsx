@@ -1,6 +1,6 @@
 import '../global.css';
 import type { Meta, StoryFn } from '@storybook/react';
-import { Carousel } from 'ui/components/carousel';
+import { Carousel } from 'ui/src/components/carousel';
 import {
   AppleTemplateCard,
   IssueTemplateCard,

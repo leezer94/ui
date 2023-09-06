@@ -6,10 +6,10 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-} from 'ui/components/card';
-import { Avatar, AvatarFallback, AvatarImage } from 'ui/components/avatar';
+} from 'ui/src/components/card';
+import { Avatar, AvatarFallback, AvatarImage } from 'ui/src/components/avatar';
 import { membersConfig } from '@/config/examples';
-import { TypographyMuted } from 'ui/components/typography';
+import { TypographyMuted } from 'ui/src/components/typography';
 import { cn } from '@/lib/utils';
 import useRenderInterval from '../../hooks/useRenderInterval';
 

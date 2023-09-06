@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
-import { cn } from '../lib/utils';
+import { cn } from '../lib';
 
 export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   asChild?: boolean;

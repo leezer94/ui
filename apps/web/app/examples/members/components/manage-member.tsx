@@ -4,10 +4,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from 'ui/components/card';
-import { Button } from 'ui/components/button';
-import { Avatar, AvatarFallback, AvatarImage } from 'ui/components/avatar';
-import { TypographyMuted } from 'ui/components/typography';
+} from 'ui/src/components/card';
+import { Button } from 'ui/src/components/button';
+import { Avatar, AvatarFallback, AvatarImage } from 'ui/src/components/avatar';
+import { TypographyMuted } from 'ui/src/components/typography';
 import { Icons } from '@/components/icons';
 import { membersConfig } from '@/config/examples';
 

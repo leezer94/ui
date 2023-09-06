@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from 'ui/components/button';
-import { TypographyMuted } from 'ui/components/typography';
+import { Button } from 'ui/src/components/button';
+import { TypographyMuted } from 'ui/src/components/typography';
 
 interface ButtonProps {
   buttonVariant:

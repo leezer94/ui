@@ -13,10 +13,10 @@ import {
   DialogTrigger,
   DialogHeader,
   DialogFooter,
-} from 'ui/components/dialog';
+} from 'ui/src/components/dialog';
 import { Feed, PathType } from '@/types/rss-feed';
-import { buttonVariants } from 'ui/components/button';
-import { TypographyMuted, TypographyP } from 'ui/components/typography';
+import { buttonVariants } from 'ui/src/components/button';
+import { TypographyMuted, TypographyP } from 'ui/src/components/typography';
 
 type ModalProps = {
   type: PathType;

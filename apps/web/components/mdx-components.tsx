@@ -12,9 +12,9 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionDescription,
-} from 'ui/components/accordion';
-import { Alert, AlertDescription, AlertTitle } from 'ui/components/alert';
-import { AspectRatio } from 'ui/components/aspect-ratio';
+} from 'ui/src/components/accordion';
+import { Alert, AlertDescription, AlertTitle } from 'ui/src/components/alert';
+import { AspectRatio } from 'ui/src/components/aspect-ratio';
 import {
   Card,
   CardHeader,
@@ -22,7 +22,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from 'ui/components/card';
+} from 'ui/src/components/card';
 import { Callout } from '@/components/callout';
 import { CodeBlockWrapper } from '@/components/code-block-wrapper';
 import { ComponentExample } from '@/components/component-example';

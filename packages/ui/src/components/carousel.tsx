@@ -1,8 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Icons } from '../icons';
-import { cn } from '../lib/utils';
+import { Icons } from '../../icons';
+import { cn } from '../lib';
 
 export interface CarouselProps {
   buttonColor: 'black' | 'white';

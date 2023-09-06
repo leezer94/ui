@@ -4,9 +4,9 @@ import {
   AccordionDescription,
   AccordionItem,
   AccordionTrigger,
-} from 'ui/components/accordion';
+} from 'ui/src/components/accordion';
 
-import { Card } from 'ui/components/card';
+import { Card } from 'ui/src/components/card';
 
 export default function OurCulture() {
   return (

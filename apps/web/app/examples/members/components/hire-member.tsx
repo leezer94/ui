@@ -1,9 +1,14 @@
 'use client';
 
-import { Card, CardHeader, CardContent, CardTitle } from 'ui/components/card';
-import { Avatar, AvatarImage, AvatarFallback } from 'ui/components/avatar';
-import { TypographyMuted } from 'ui/components/typography';
-import { Separator } from 'ui/components/separator';
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardTitle,
+} from 'ui/src/components/card';
+import { Avatar, AvatarImage, AvatarFallback } from 'ui/src/components/avatar';
+import { TypographyMuted } from 'ui/src/components/typography';
+import { Separator } from 'ui/src/components/separator';
 import RecentActivity from '@/app/examples/members/components/features/recent-activity';
 import {
   TeamGrowth,

@@ -10,11 +10,16 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from 'ui/components/alert-dialog';
-import { Card, CardContent, CardHeader, CardTitle } from 'ui/components/card';
-import { TypographyH4 } from 'ui/components/typography';
-import { Button } from 'ui/components/button';
-import { Separator } from 'ui/components/separator';
+} from 'ui/src/components/alert-dialog';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from 'ui/src/components/card';
+import { TypographyH4 } from 'ui/src/components/typography';
+import { Button } from 'ui/src/components/button';
+import { Separator } from 'ui/src/components/separator';
 import { todoListConfig } from '@/config/examples';
 import { Icons } from '@/components/icons';
 import { cn } from '@/lib/utils';

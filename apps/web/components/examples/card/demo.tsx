@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from 'ui/components/card';
+} from 'ui/src/components/card';
 import {
   animate,
   motion,

@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionDescription,
-} from 'ui/components/accordion';
+} from 'ui/src/components/accordion';
 
 const meta = {
   title: 'Leezer-UI/Accordion',

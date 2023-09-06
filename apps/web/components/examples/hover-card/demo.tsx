@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar, AvatarImage } from 'ui/components/avatar';
+import { Avatar, AvatarImage } from 'ui/src/components/avatar';
 import {
   HoverCard,
   HoverCardArrow,
@@ -10,8 +10,8 @@ import {
   HoverCardTitle,
   HoverCardDescription,
   HoverCardFooter,
-} from 'ui/components/hover-card';
-import { TypographyMuted } from 'ui/components/typography';
+} from 'ui/src/components/hover-card';
+import { TypographyMuted } from 'ui/src/components/typography';
 
 export default function HoverCardDemo() {
   return (

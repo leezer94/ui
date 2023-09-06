@@ -6,8 +6,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from 'ui/components/card';
-import { TypographyH4, TypographyMuted } from 'ui/components/typography';
+} from 'ui/src/components/card';
+import { TypographyH4, TypographyMuted } from 'ui/src/components/typography';
 
 export default function TeamGrowth() {
   return (

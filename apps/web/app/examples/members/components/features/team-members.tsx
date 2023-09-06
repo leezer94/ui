@@ -3,8 +3,8 @@
 import { membersConfig } from '@/config/examples';
 import { cn } from '@/lib/utils';
 import { useCallback, useState } from 'react';
-import { Button } from 'ui/components/button';
-import { Carousel } from 'ui/components/carousel';
+import { Button } from 'ui/src/components/button';
+import { Carousel } from 'ui/src/components/carousel';
 
 export default function TeamMembers() {
   const [isHovered, setIsHovered] = useState(false);

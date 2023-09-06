@@ -1,8 +1,8 @@
 'use client';
 
 import { CheckIcon } from 'lucide-react';
-import { Checkbox, CheckboxIndicator } from 'ui/components/checkbox';
-import { Button } from 'ui/components/button';
+import { Checkbox, CheckboxIndicator } from 'ui/src/components/checkbox';
+import { Button } from 'ui/src/components/button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ZodType } from 'zod';

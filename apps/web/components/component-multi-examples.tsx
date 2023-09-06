@@ -3,7 +3,12 @@
 import * as React from 'react';
 
 import { cn } from '@/lib';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui/components/tabs';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from 'ui/src/components/tabs';
 import { useState, useCallback } from 'react';
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {

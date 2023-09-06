@@ -1,6 +1,6 @@
-import { Form, FormField, FormItem } from 'ui/components/form';
+import { Form, FormField, FormItem } from 'ui/src/components/form';
 
-import { Button } from 'ui/components/button';
+import { Button } from 'ui/src/components/button';
 import { ZodType, z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';

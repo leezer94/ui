@@ -16,8 +16,13 @@ import {
   UserFeed,
   ProgressBar,
 } from '@/app/examples/feed/components';
-import { Card, CardContent, CardHeader, CardTitle } from 'ui/components/card';
-import { Separator } from 'ui/components/separator';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from 'ui/src/components/card';
+import { Separator } from 'ui/src/components/separator';
 import { cn } from '@/lib';
 
 export const metadata: Metadata = {

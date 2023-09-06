@@ -1,7 +1,7 @@
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
-import { buttonVariants } from 'ui/components/button';
+import { buttonVariants } from 'ui/src/components/button';
 import { cn } from '@/lib/utils';
 import { Icons } from '@/components/icons';
 import {

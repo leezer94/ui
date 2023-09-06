@@ -6,14 +6,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from 'ui/components/card';
-import { Button } from 'ui/components/button';
-import { TypographyH4, TypographyMuted } from 'ui/components/typography';
-import { Separator } from 'ui/components/separator';
+} from 'ui/src/components/card';
+import { Button } from 'ui/src/components/button';
+import { TypographyH4, TypographyMuted } from 'ui/src/components/typography';
+import { Separator } from 'ui/src/components/separator';
 import { Icons } from 'ui/icons';
 import { cn } from 'ui/lib/utils';
 import { membersConfig } from '../../config';
-import { Carousel } from 'ui/components/carousel';
+import { Carousel } from 'ui/src/components/carousel';
 
 export function TeamMembers() {
   const [isHovered, setIsHovered] = useState(false);

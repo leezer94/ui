@@ -4,7 +4,7 @@ import {
   AccordionDescription,
   AccordionItem,
   AccordionTrigger,
-} from 'ui/components/accordion';
+} from 'ui/src/components/accordion';
 
 export default function AccordionDemo() {
   return (

@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle } from 'ui/components/alert';
+import { Alert, AlertDescription, AlertTitle } from 'ui/src/components/alert';
 
 interface CalloutProps {
   icon?: string;

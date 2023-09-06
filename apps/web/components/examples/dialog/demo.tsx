@@ -8,9 +8,9 @@ import {
   DialogDescription,
   DialogContent,
   DialogHeader,
-} from 'ui/components/dialog';
-import { Button, buttonVariants } from 'ui/components/button';
-import { TypographyP } from 'ui/components/typography';
+} from 'ui/src/components/dialog';
+import { Button, buttonVariants } from 'ui/src/components/button';
+import { TypographyP } from 'ui/src/components/typography';
 
 export default function DialogDemo() {
   return (

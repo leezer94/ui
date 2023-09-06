@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Progress } from 'ui/components/progress';
+import { Progress } from 'ui/src/components/progress';
 import { cn } from '@/lib/utils';
 
 interface Props {

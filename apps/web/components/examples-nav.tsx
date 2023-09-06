@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
-import { ScrollArea, ScrollBar } from 'ui/components/scroll-area';
+import { ScrollArea, ScrollBar } from 'ui/src/components/scroll-area';
 import { Icons } from '@/components/icons';
 
 const examples = [

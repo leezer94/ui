@@ -5,7 +5,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTrigger,
-} from 'ui/components/dialog';
+} from 'ui/src/components/dialog';
 
 interface Props {
   trigger: ReactNode;

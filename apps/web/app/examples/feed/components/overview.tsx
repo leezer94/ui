@@ -1,5 +1,10 @@
 import { ReactNode } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from 'ui/components/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from 'ui/src/components/card';
 import { cn } from '@/lib';
 
 interface Props {

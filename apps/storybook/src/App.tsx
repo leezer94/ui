@@ -4,7 +4,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './global.css';
-import { Button } from 'ui/components/button';
+import { Button } from 'ui/src/components/button';
 
 function App() {
   const [count, setCount] = useState(0);
